@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Атрибуты</title>
+  </head>
+  <body>
+    <h1>Получение атрибутов в JavaScript</h1>
+    <h5>№ 1 - Получите значение его атрибута value.</h5>
+    <input id="elem1_1" value="text" />
+    <br />
+
+    <h5>№ 2 - Получите значение его атрибута class.</h5>
+    <input id="elem1_2" class="www zzz" />
+    <br />
+
+    <h1>Установка атрибутов в JavaScript</h1>
+    <h5>№ 1 - Установите его атрибут value в значение 'text'.</h5>
+    <input id="elem2_1" />
+    <br />
+
+    <h5>№ 2 - Установите ему атрибут class в значение 'valid'.</h5>
+    <input id="elem2_2" />
+    <br />
+
+    <h1>Удаление атрибутов в JavaScript</h1>
+    <h5>Удалите у него атрибут value.</h5>
+    <input id="elem3" value="text" />
+    <br />
+
+    <h1>Проверка наличия атрибутов в JavaScript</h1>
+    <h5>Проверьте наличие у него атрибута value.</h5>
+    <input id="elem4" value="text" />
+    <br />
+
+    <h1>Пользовательские атрибуты в JavaScript</h1>
+    <h5>
+      № 1 - Сделайте так, чтобы по клику на див в конец его текста добавилось
+      содержимое его атрибута data-text.
+    </h5>
+    <div id="elem5_1" data-text="str">text</div>
+    <br />
+
+    <h5>
+      № 2 - Сделайте так, чтобы по клику на любой из дивов ему в конец
+      записывался его порядковый номер.
+    </h5>
+    <div data-num="1">text</div>
+    <div data-num="2">text</div>
+    <div data-num="3">text</div>
+    <div data-num="4">text</div>
+    <div data-num="5">text</div>
+    <br />
+
+    <h5>
+      № 3 - Дана кнопка. Сделайте так, чтобы эта кнопка считала количество
+      кликов по ней, записывая их в какой-нибудь пользовательский атрибут. Пусть
+      по клику на другую кнопку на экран выводится, сколько кликов было сделано
+      по первой кнопке.
+    </h5>
+    <button id="button5_31">Нажми</button>
+    <button id="button5_32">Показать кол-во кликов</button>
+    <br />
+
+    <h5>
+      № 4 - В этом инпуте в атрибуте data-length содержится количество символов,
+      которое нужно ввести в инпут. Сделайте так, чтобы по потери фокуса, если
+      количество введенных символов не совпадает с заданным, выводилось
+      сообщение об этом.
+    </h5>
+    <input id="elem5_4" data-length="5" />
+    <br />
+    <h5>
+      № 5 - В этом инпуте атрибуты data-min и data-max содержат диапазон.
+      Сделайте так, чтобы по потери фокуса, если количество введенных символов
+      не попадает в этот диапазон, выводилось сообщение об этом.
+    </h5>
+    <input id="elem5_5" data-min="5" data-max="10" />
+    <br />
+    <h1>Имена атрибутов с дефисами в JavaScript</h1>
+    <h5>
+      Сделайте так, чтобы по клику на див в конец его текста добавлялась
+      стоимость покупки, равная цене, умноженной на количество.
+    </h5>
+    <div id="elem6" data-product-price="1000" data-product-amount="5">
+      товар яблоки
+    </div>
+    <br />
+    <h1>Обращение к атрибутам через методы в JavaScript</h1>
+    <h5>
+      Даны абзацы. Переберите их циклом и каждому абзацу в атрибут data-num
+      запишите порядковый номер этого абзаца. Используйте метод setAttribute.
+    </h5>
+    <p class="paragraph7">Абзац 1</p>
+    <p class="paragraph7">Абзац 2</p>
+    <p class="paragraph7">Абзац 3</p>
+    <br />
+    <h1>Манипулирование массивом CSS классов в JavaScript</h1>
+    <h5>№ 1 - Дан элемент. Узнайте количество его классов.</h5>
+    <p id="elem8_1" class="www ggg zzz"></p>
+    <br />
+    <h5>№ 2 - Дан элемент. Переберите в цикле его классы.</h5>
+    <p id="elem8_2" class="www ggg zzz"></p>
+    <br />
+    <h1>Добавление CSS классов в JavaScript</h1>
+    <h5>Дан элемент. Добавьте ему класс xxx</h5>
+    <p id="elem9" class="www ggg zzz"></p>
+    <br />
+    <h1>Удаление CSS классов в JavaScript</h1>
+    <h5>Дан элемент. Удалите у него класс www и класс zzz.</h5>
+    <p id="elem10" class="www ggg zzz"></p>
+    <br />
+    <h1>Проверка CSS классов в JavaScript</h1>
+    <h5>Дан элемент. Проверьте наличие у него класса ggg.</h5>
+    <p id="elem11" class="www ggg zzz"></p>
+    <br />
+    <h1>Чередование CSS классов в JavaScript</h1>
+    <h5>
+      Дан элемент. Добавьте ему класс www, если его нет и удалите - если есть.
+    </h5>
+    <p id="elem12"></p>
+    <script>
+      // №1_1
+      let elem1_1 = document.querySelector("#elem1_1");
+      let value = elem1_1.getAttribute("value");
+      console.log(value);
+
+      // №1_2
+      let elem1_2 = document.querySelector("#elem1_2");
+      let className = elem1_2.getAttribute("class");
+      console.log(className);
+
+      // №2_1
+      let elem2_1 = document.querySelector("#elem2_1");
+      elem2_1.setAttribute("value", "text");
+
+      // №2_2
+      let elem2_2 = document.querySelector("#elem2_2");
+      elem2_2.setAttribute("class", "valid");
+
+      // №3
+      let elem3 = document.querySelector("#elem3");
+      elem3.removeAttribute("value");
+
+      // №4
+      let elem4 = document.querySelector("#elem4");
+      console.log(elem4.hasAttribute("value"));
+
+      // №5_1
+      let elem5_1 = document.querySelector("#elem5_1");
+      elem5_1.addEventListener("click", function () {
+        elem5_1.textContent += elem5_1.dataset.text;
+      });
+
+      // №5_2
+      let elems5_2 = document.querySelectorAll("[data-num]");
+      elems5_2.forEach(function (elem5_2) {
+        elem5_2.addEventListener("click", function () {
+          elem5_2.textContent += ` ${elem5_2.dataset.num}`;
+        });
+      });
+
+      // №5_3
+      let button5_31 = document.querySelector("#button5_31");
+      let button5_32 = document.querySelector("#button5_32");
+      let clickCount = 0;
+      button5_31.addEventListener("click", function () {
+        clickCount++;
+        button5_31.setAttribute("data-click-count", clickCount);
+      });
+
+      button5_32.addEventListener("click", function () {
+        let count = button5_31.getAttribute("data-click-count");
+        alert("Количество кликов на первой кнопке: " + count);
+      });
+
+      // №5_4
+      let elem5_4 = document.querySelector("#elem5_4");
+      elem5_4.addEventListener("blur", function () {
+        if (elem5_4.value.length !== parseInt(elem5_4.dataset.length)) {
+          alert("Количество введенных символов не совпадает с заданным");
+        }
+      });
+
+      // №5_5
+      let elem5_5 = document.querySelector("#elem5_5");
+      elem5_5.addEventListener("blur", function () {
+        if (
+          elem5_5.value.length < parseInt(elem5_5.dataset.min) ||
+          elem5_5.value.length > parseInt(elem5_5.dataset.max)
+        ) {
+          alert("Количество введенных символов не попадает в диапазон");
+        }
+      });
+
+      // №6
+      let elem6 = document.querySelector("#elem6");
+      elem6.addEventListener("click", function () {
+        elem6.textContent +=
+          elem6.dataset.productPrice * elem6.dataset.productAmount;
+      });
+
+      // №7
+      let paragraphs7 = document.querySelectorAll(".paragraph7");
+      for (let i = 0; i < paragraphs7.length; i++) {
+        paragraphs7[i].setAttribute("data-num", i + 1);
+      }
+
+      // №8_1
+      let elem8_1 = document.querySelector("#elem8_1");
+      let length = elem8_1.classList.length;
+      console.log(length);
+
+      // №8_2
+      let elem8_2 = document.querySelector("#elem8_2");
+      let classNames = elem8_2.classList;
+      for (let className of classNames) {
+        console.log(className);
+      }
+
+      // №9
+      let elem9 = document.querySelector("#elem9");
+      elem9.classList.add("xxx");
+
+      // №10
+      let elem10 = document.querySelector("#elem10");
+      elem10.classList.remove("www", "zzz");
+
+      // №11
+      let elem11 = document.querySelector("#elem11");
+      let contains = elem11.classList.contains("ggg");
+      console.log(contains);
+
+      // №12
+      let elem12 = document.querySelector("#elem12");
+      elem12.classList.toggle('www');
+    </script>
+  </body>
+</html>
