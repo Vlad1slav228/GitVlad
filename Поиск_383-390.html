@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск</title>
+  </head>
+  <body>
+    <h1>Нахождение потомков элементов в JavaScript</h1>
+    <h5>
+      № 1_1 - Найдите первого потомка этого элемента и сделайте его текст
+      красного цвета.
+    </h5>
+    <ul id="elem1_1">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h5>
+      № 1_2 - Найдите последнего потомка этого элемента и сделайте его текст
+      красного цвета.
+    </h5>
+    <ul id="elem1_2">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h5>
+      № 1_3 - Найдите всех потомков этого элемента и добавьте им в конец текст
+      '!'.
+    </h5>
+    <ul id="elem1_3">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h1>Нахождение родителей элементов в JavaScript</h1>
+    <h5>№ 2 - Найдите его родителя и задайте ему красную границу.</h5>
+    <div>
+      <ul>
+        <li>text</li>
+        <li>text</li>
+        <li id="elem2">text</li>
+        <li>text</li>
+        <li>text</li>
+      </ul>
+    </div>
+    <br />
+    <h1>Поиск всех родителей элементов в JavaScript</h1>
+    <h5>
+      № 3_1 - Найдите ближайшего родителя этого элемента, являющегося тегом div.
+    </h5>
+    <header>
+      <div>
+        <p>
+          <span id="elem3_1"></span>
+        </p>
+      </div>
+    </header>
+    <br />
+    <h5>
+      № 3_2 - Найдите ближайшего родителя этого элемента, являющегося элементом
+      с классом www.
+    </h5>
+    <header>
+      <div class="www">
+        <p class="www">
+          <span id="elem3_2"></span>
+        </p>
+      </div>
+    </header>
+    <br />
+    <h1>Поиск соседей элементов в JavaScript</h1>
+    <h5>№ 4_1 - Найдите его соседа сверху и добавьте ему в конец текст '!'.</h5>
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem4_1">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h5>№ 4_2 - Найдите его соседа снизу и добавьте ему в конец текст '!'.</h5>
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem4_2">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h5>
+      № 4_3 - Найдите его соседа снизу его соседа снизу (следующий элемент за
+      соседним) и добавьте ему в конец текст '!'.
+    </h5>
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li id="elem4_3">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h5>
+      № 4_4 - Поменяйте местами текст его соседа сверху и текст его соседа
+      снизу.
+    </h5>
+    <ul>
+      <li>text1</li>
+      <li>text2</li>
+      <li id="elem4_4">text3</li>
+      <li>text4</li>
+      <li>text5</li>
+    </ul>
+    <br />
+    <h1>Поиск элемента по id в JavaScript</h1>
+    <h5>
+      № 5 - Получите этот элемент с помощью метода getElementById и установите
+      ему какой-нибудь текст.
+    </h5>
+    <div id="elem5"></div>
+    <br />
+    <h1>Поиск элемента по имени тега в JavaScript</h1>
+    <h5>
+      № 6 - Получите все теги li по имени тега и сделайте их текст красного
+      цвета.
+    </h5>
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h1>Поиск элемента по имени класса в JavaScript</h1>
+    <h5>
+      № 7 - Получите эти элементы по имени класса и сделайте их текст красного
+      цвета.
+    </h5>
+    <p class="nnn">elem 1</p>
+    <p class="nnn">elem 2</p>
+    <p class="nnn">elem 3</p>
+    <br />
+    <h1>Поиск элементов внутри другого элемента в JavaScript</h1>
+    <h5>
+      № 8 - Найдите внутри родителя элементы с классом www и запишите их в
+      переменную elems1. Затем найдите внутри родителя элементы с классом ggg и
+      запишите их в переменную elems2.
+    </h5>
+    <div id="parent8">
+      <p class="www">text</p>
+      <p class="www">text</p>
+      <p class="www">text</p>
+      <p class="ggg">text</p>
+      <p class="ggg">text</p>
+      <p class="ggg">text</p>
+    </div>
+    <script>
+      // 1_1
+      let elem1_1 = document.querySelector("#elem1_1");
+      let firstChild1_1 = elem1_1.firstElementChild;
+      firstChild1_1.style.color = "red";
+
+      // 1_2
+      let elem1_2 = document.querySelector("#elem1_2");
+      let lastChild1_2 = elem1_2.lastElementChild;
+      lastChild1_2.style.color = "red";
+
+      // 1_3
+      let elem1_3 = document.querySelector("#elem1_3");
+      let children1_3 = elem1_3.children;
+      for (let ch1_3 of children1_3) {
+        ch1_3.textContent += "!";
+      }
+
+      // 2
+      let elem2 = document.querySelector("#elem2");
+      let parent2 = elem2.parentElement;
+      parent2.style.border = "2px solid red";
+
+      // 3_1
+      let elem3_1 = document.querySelector("#elem3_1");
+      let parent3_1 = elem3_1.closest("div");
+      console.log(parent3_1);
+
+      // 3_2
+      let elem3_2 = document.querySelector("#elem3_2");
+      let parent3_2 = elem3_2.closest(".www");
+      console.log(parent3_2);
+
+      // 4_1
+      let elem4_1 = document.querySelector("#elem4_1");
+      let upperSibling4_1 = elem4_1.previousElementSibling;
+      upperSibling4_1.textContent += "!";
+
+      // 4_2
+      let elem4_2 = document.querySelector("#elem4_2");
+      let lowerSibling4_2 = elem4_2.nextElementSibling;
+      lowerSibling4_2.textContent += "!";
+
+      // 4_3
+      let elem4_3 = document.querySelector("#elem4_3");
+      let lowerSibling4_3 = elem4_3.nextElementSibling;
+      let nextLowerSibling4_3 = lowerSibling4_3.nextElementSibling;
+      nextLowerSibling4_3.textContent += "!";
+
+      // 4_4
+      let elem4_4 = document.querySelector("#elem4_4");
+      let upperSibling4_4 = elem4_4.previousElementSibling.textContent;
+      let lowerSibling4_4 = elem4_4.nextElementSibling.textContent;
+      elem4_4.previousElementSibling.textContent = lowerSibling4_4;
+      elem4_4.nextElementSibling.textContent = upperSibling4_4;
+
+      // 5
+      let elem5 = document.getElementById("elem5");
+      elem5.textContent = "JavaScript!";
+
+      // 6
+      let elems6 = document.getElementsByTagName("li");
+      for (let elem6 of elems6) {
+        elem6.style.color = "red";
+      }
+
+      // 7
+      let elems7 = document.getElementsByClassName("nnn");
+      for (let elem7 of elems7) {
+        elem7.style.color = "red";
+      }
+
+      // 8
+      let parent8 = document.querySelector('#parent8');
+      let elems1 = parent8.querySelectorAll('.www');
+      let elems2 = parent8.querySelectorAll('.ggg');
+    </script>
+  </body>
+</html>
