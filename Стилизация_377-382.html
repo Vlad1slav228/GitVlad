@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стилизация</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .line {
+        text-decoration: line-through;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Стилизация элементов через атрибут style в JavaScript</h1>
+    <h5>
+      № 1 - Дан див и кнопка. По клику на кнопку добавьте диву ширину, высоту и
+      границу.
+    </h5>
+    <div id="div1">Блок 1</div>
+    <br />
+    <button type="button" id="button1">Нажать</button>
+    <br />
+    <h1>Стилизация свойств с дефисом в JavaScript</h1>
+    <h5>
+      № 1 - Дан див с текстом и кнопка. По клику на кнопку установите диву
+      размер шрифта в 20px, а также верхнюю границу и фон.
+    </h5>
+    <div id="div2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos suscipit
+      neque quod.
+    </div>
+    <br />
+    <button type="button" id="button2">Нажать</button>
+    <br />
+    <h1>Исключение при стилизации элементов в JavaScript</h1>
+    <h5>
+      № 1 - Дан список ul и кнопка. По клику на кнопку добавьте тегам li
+      свойство float в значении left.
+    </h5>
+    <ul>
+      <li class="li3">1</li>
+      <li class="li3">2</li>
+      <li class="li3">3</li>
+    </ul>
+    <br />
+    <button type="button" id="button3">Нажать</button>
+    <br />
+    <h1>Стилизация с помощью CSS классов на JavaScript</h1>
+    <h5>
+      Дан абзац. Даны кнопки 'перечеркнуть', 'сделать жирным', 'сделать
+      красным'. Пусть по нажатию на каждую кнопку заданное действие происходит с
+      абзацем (становится красным, например).
+    </h5>
+    <p id="p4">JavaScript</p>
+    <button type="button" id="button4_1">Перечеркнуть</button>
+    <button type="button" id="button4_2">Сделать жирным</button>
+    <button type="button" id="button4_3">Cделать красным</button>
+    <br />
+    <h1>Преимущество стилизации с помощью CSS классов в JavaScript</h1>
+    <h5>
+      Модифицируйте предыдущую задачу так, чтобы повторное нажатие на кнопку
+      отменяло действие этой кнопки.
+    </h5>
+    <p id="p5">JavaScript</p>
+    <button type="button" id="button5_1">Перечеркнуть</button>
+    <button type="button" id="button5_2">Сделать жирным</button>
+    <button type="button" id="button5_3">Cделать красным</button>
+    <br />
+    <script>
+      // №1
+      let div1 = document.querySelector("#div1");
+      let button1 = document.querySelector("#button1");
+      button1.addEventListener("click", function () {
+        div1.style.border = "2px dotted black";
+        div1.style.width = "100px";
+        div1.style.height = "75px";
+      });
+
+      // №2
+      let div2 = document.querySelector("#div2");
+      let button2 = document.querySelector("#button2");
+      button2.addEventListener("click", function () {
+        div2.style.fontSize = "20px";
+        div2.style.borderTop = "3px dashed red";
+        div2.style.background = "aqua";
+      });
+
+      // №3
+      let li3 = document.querySelectorAll(".li3");
+      let button3 = document.querySelector("#button3");
+      button3.addEventListener("click", function () {
+        li3.forEach((li3) => {
+          li3.style.cssFloat = "left";
+        });
+      });
+
+      // №4
+      let p4 = document.querySelector("#p4");
+      let button4_1 = document.querySelector("#button4_1");
+      let button4_2 = document.querySelector("#button4_2");
+      let button4_3 = document.querySelector("#button4_3");
+      button4_1.addEventListener("click", function () {
+        p4.classList.add("line");
+      });
+
+      button4_2.addEventListener("click", function () {
+        p4.classList.add("bold");
+      });
+
+      button4_3.addEventListener("click", function () {
+        p4.classList.add("red");
+      });
+
+      // №5
+      let p5 = document.querySelector("#p5");
+      let button5_1 = document.querySelector("#button5_1");
+      let button5_2 = document.querySelector("#button5_2");
+      let button5_3 = document.querySelector("#button5_3");
+      button5_1.addEventListener("click", function () {
+        p5.classList.toggle("line");
+      });
+
+      button5_2.addEventListener("click", function () {
+        p5.classList.toggle("bold");
+      });
+
+      button5_3.addEventListener("click", function () {
+        p5.classList.toggle("red");
+      });
+    </script>
+  </body>
+</html>
