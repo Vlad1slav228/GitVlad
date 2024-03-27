@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Узлы</title>
+  </head>
+  <body>
+    <h1>Работа с узлами в JavaScript</h1>
+    <h5>
+      №1_1 - Напишите код, который покажет разницу между lastChild и
+      lastElementChild.
+    </h5>
+    <div id="parent1_1">
+      <span>Text Node</span>
+      <p>Paragraph Element</p>
+      <div>Another Div Element</div>
+    </div>
+    <br />
+    <h5>
+      №1_2 - Напишите код, который покажет разницу между nextSibling и
+      nextElementSibling.
+    </h5>
+    <div id="parent1_2">
+      <span>Text Node</span>
+      <p>Paragraph Element</p>
+      <div>Another Div Element</div>
+    </div>
+    <br />
+    <h5>
+      №1_3 - Напишите код, который покажет разницу между previousSibling и
+      previousElementSibling.
+    </h5>
+    <div id="parent1_3">
+      <span>Text Node</span>
+      <p>Paragraph Element</p>
+      <div>Another Div Element</div>
+    </div>
+    <br />
+    <h1>Перебор узлов циклом в JavaScript</h1>
+    <h5>Переберите циклом все узлы этого дива и выведите их в консоль.</h5>
+    <div id="elem2">
+      txt<b>tag</b
+      ><!--com-->txt<b>tag</b
+      ><!--com-->
+    </div>
+    <br />
+    <h1>Название узлов в JavaScript</h1>
+    <h5>
+      Переберите циклом все узлы этого дива и выведите в консоль их названия.
+    </h5>
+    <div id="elem3">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+    <br />
+    <h1>Тип узлов в JavaScript</h1>
+    <h5>
+      Переберите циклом все узлы этого дива и выведите в консоль только
+      узлы-элементы и текстовые узлы.
+    </h5>
+    <div id="elem4">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+    <br>
+    <h1>Текст узлов в JavaScript</h1>
+    <h5>№5_1 - Переберите циклом все узлы этого дива и выведите в консоль тексты всех узлов.</h5>
+    <div id="elem5_1">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+    <br>
+    <h5>№5_2 - Переберите циклом все узлы этого дива и выведите в консоль тексты всех комментариев и текстовых узлов.</h5>
+    <div id="elem5_2">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+    <br>
+    <h5>№5_3 - Переберите циклом все узлы этого дива и выведите в консоль тексты текстовых узлов и элементов.</h5>
+    <div id="elem5_3">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+    <br>
+    <h5>№5_4 - Переберите циклом все узлы этого дива и каждому узлу в конец запишите его тип.</h5>
+    <div id="elem5_4">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+    <script>
+      // 1_1
+      let parent1_1 = document.getElementById("parent1_1");
+      let lastChild = parent1_1.lastChild;
+      let lastElementChild = parent1_1.lastElementChild;
+      console.log("LastChild:", lastChild);
+      console.log("LastElementChild:", lastElementChild);
+
+      // 1_2
+      let nextSibling = document.querySelector("#parent1_2 span").nextSibling;
+      let nextElementSibling =
+        document.querySelector("span").nextElementSibling;
+      console.log("NextSibling:", nextSibling);
+      console.log("NextElementSibling:", nextElementSibling);
+
+      // 1_3
+      let previousSibling =
+        document.querySelector("#parent1_3 div").previousSibling;
+      let previousElementSibling =
+        document.querySelector("#parent1_3 div").previousElementSibling;
+      console.log("PreviousSibling:", previousSibling);
+      console.log("PreviousElementSibling:", previousElementSibling);
+
+      // 2
+      let elem2 = document.getElementById("elem2");
+      for (let node2 of elem2.childNodes) {
+        console.log(node2);
+      }
+
+      // 3
+      let elem3 = document.getElementById("elem3");
+      let childNodes3 = elem3.childNodes;
+      for (let node3 of childNodes3) {
+        console.log(node3.nodeName);
+      }
+
+      // 4
+      let elem4 = document.getElementById("elem4");
+      let childNodes4 = elem4.childNodes;
+      for (let node4 of childNodes4) {
+        if (node4.nodeType == 1 || node4.nodeType == 3) {
+          console.log(node4.nodeType);
+        }
+      }
+
+      // 5_1
+      let elem5_1 = document.getElementById('elem5_1');
+      let childNodes5_1 = elem5_1.childNodes;
+      for (let node5_1 of childNodes5_1) {
+        if (node5_1.nodeType === 3) {
+        console.log(node5_1.textContent);
+        }
+      }
+
+      // 5_2
+      let elem5_2 = document.getElementById('elem5_2');
+      let childNodes5_2 = elem5_2.childNodes;
+      for (let node5_2 of childNodes5_2) {
+        if (node5_2.nodeType === 3 || node5_2.nodeType == 8) {
+        console.log(node5_2.textContent);
+        }
+      }
+
+      // 5_3
+      let elem5_3 = document.getElementById('elem5_3');
+      let childNodes5_3 = elem5_3.childNodes;
+      for (let node5_3 of childNodes5_3) {
+        if (node5_3.nodeType === 1 || node5_3.nodeType == 3) {
+        console.log(node5_3.textContent);
+        }
+      }
+
+      // 5_4
+      let elem5_4 = document.getElementById('elem5_4');
+      let childNodes5_4 = elem5_4.childNodes;
+      for (let node5_4 of childNodes5_4) {
+        console.log(node5_4.textContent + ` - ${node5_4.nodeType}`);
+      }
+    </script>
+  </body>
+</html>
