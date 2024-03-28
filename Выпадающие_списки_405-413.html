@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Выпадающие списки</title>
+  </head>
+  <body>
+    <h1>Работа с выпадающими списками в JavaScript</h1>
+    <h5>
+      №1_1 - Дан селект, абзац и кнопка. По клику на кнопку выведите текст
+      выбранного пункта списка в абзац.
+    </h5>
+    <select id="select1_1">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <p id="paragraph1_1"></p>
+    <button id="button1_1">Нажмите</button>
+    <br />
+    <h5>
+      №1_2 - Сделайте выпадающий список годов от 2020 до 2030. При выборе
+      какого-нибудь пункта списка выведите сообщение о том, високосный этот год
+      или нет.
+    </h5>
+    <select id="select1_2">
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+      <option>2027</option>
+      <option>2028</option>
+      <option>2029</option>
+      <option>2030</option>
+    </select>
+    <br />
+    <h1>Атрибут value в выпадающих списках в JavaScript</h1>
+    <h5>
+      №2 - Сделайте выпадающий список с названиями дней недели. В качестве
+      атрибутов value пунктов списка добавьте номера дней недели от 1 до 7. По
+      изменению списка выведите на экран сообщение о том, выбран выходной день
+      или рабочий.
+    </h5>
+    <select id="select2">
+      <option value="1">Понедельник</option>
+      <option value="2">Вторник</option>
+      <option value="3">Среда</option>
+      <option value="4">Четверг</option>
+      <option value="5">Пятница</option>
+      <option value="6">Суббота</option>
+      <option value="7">Воскресенье</option>
+    </select>
+    <br />
+    <h1>Изменение выбранного пункта списка на JavaScript</h1>
+    <h5>
+      №3 - Сделайте выпадающий список с названиями месяцев. Сделайте так, чтобы
+      JavaScript по умолчанию выбирал в этом списке текущий месяц.
+    </h5>
+    <select id="select3">
+      <option value="1">Январь</option>
+      <option value="2">Февраль</option>
+      <option value="3">Март</option>
+      <option value="4">Апрель</option>
+      <option value="5">Май</option>
+      <option value="6">Июнь</option>
+      <option value="7">Июль</option>
+      <option value="8">Август</option>
+      <option value="9">Сентябрь</option>
+      <option value="10">Октябрь</option>
+      <option value="11">Ноябрь</option>
+      <option value="12">Декабрь</option>
+    </select>
+    <br />
+    <h1>Массив пунктов выпадающего списка на JavaScript</h1>
+    <h5>
+      №4 - Переберите все пункты списка циклом и в конец текста каждого пункта
+      добавьте значение его атрибута value.
+    </h5>
+    <select id="select4">
+      <option value="1">Первый</option>
+      <option value="2">Второй</option>
+      <option value="3">Третий</option>
+      <option value="4">Четвертый</option>
+      <option value="5">Пятый</option>
+    </select>
+    <br />
+    <h1>Выбор пункта списка в JavaScript</h1>
+    <h5>
+      №5 - Дан выпадающий список и кнопка. По клику на кнопку сделайте
+      отмеченным последний пункт списка.
+    </h5>
+    <select id="select5">
+      <option value="1">Первый</option>
+      <option value="2">Второй</option>
+      <option value="3">Третий</option>
+      <option value="4">Четвертый</option>
+      <option value="5">Пятый</option>
+    </select>
+    <button type="button" id="button5">Нажмите</button>
+    <br />
+    <h1>Получение выбранного оптиона в JavaScript</h1>
+    <h5>
+      №6_1 - Дан селект и кнопка. По нажатию на кнопку выведите на экран текст
+      отмеченного пункта списка.
+    </h5>
+    <select id="select6_1">
+      <option value="1">Первый</option>
+      <option value="2">Второй</option>
+      <option value="3">Третий</option>
+      <option value="4">Четвертый</option>
+      <option value="5">Пятый</option>
+    </select>
+    <button type="button" id="button6_1">Нажмите</button>
+    <br />
+    <h5>
+      №6_2 - Дан селект и кнопка. По нажатию на кнопку добавьте в конец текста
+      выбранного пункта восклицательный знак.
+    </h5>
+    <select id="select6_2">
+      <option value="1">Первый</option>
+      <option value="2">Второй</option>
+      <option value="3">Третий</option>
+      <option value="4">Четвертый</option>
+      <option value="5">Пятый</option>
+    </select>
+    <button type="button" id="button6_2">Нажмите</button>
+    <script>
+      // 1_1
+      let select1_1 = document.getElementById("select1_1");
+      let paragraph1_1 = document.getElementById("paragraph1_1");
+      let button1_1 = document.getElementById("button1_1");
+      button1_1.addEventListener("click", function () {
+        paragraph1_1.textContent = select1_1.value;
+      });
+
+      // 1_2
+      let select1_2 = document.getElementById("select1_2");
+      select1_2.addEventListener("change", function () {
+        let selectedYear = parseInt(select1_2.value);
+        let isLeapYear =
+          (selectedYear % 4 === 0 && selectedYear % 100 !== 0) ||
+          selectedYear % 400 === 0;
+        let message = isLeapYear
+          ? `${selectedYear} - високосный год`
+          : `${selectedYear} - не високосный год`;
+        alert(message);
+      });
+
+      // 2
+      let select2 = document.getElementById("select2");
+      select2.addEventListener("change", function () {
+        if (this.value >= 1 && this.value <= 5) {
+          alert("Выбран рабочий день");
+        } else {
+          alert("Выбран выходной день");
+        }
+      });
+
+      // 3
+      document.addEventListener("DOMContentLoaded", function () {
+        let select3 = document.getElementById("select3");
+        let currentMonth = new Date().getMonth() + 1;
+        select3.value = currentMonth;
+      });
+
+      // 4
+      let select4 = document.getElementById("select4");
+      for (let option of select4) {
+        option.textContent += " (" + option.value + ")";
+      }
+
+      // 5
+      let select5 = document.getElementById("select5");
+      let button5 = document.getElementById("button5");
+      button5.addEventListener("click", function () {
+        let lastOption5 = select5[select5.length - 1];
+        lastOption5.selected = true;
+      });
+
+      // 6_1
+      let button6_1 = document.getElementById("button6_1");
+      let select6_1 = document.getElementById("select6_1");
+      button6_1.addEventListener("click", function () {
+        let selectedIndex = select6_1.selectedIndex;
+        let selectedOption = select6_1.options[selectedIndex];
+        alert("Выбранный пункт: " + selectedOption.textContent);
+      });
+
+      // 6_2
+      let button6_2 = document.getElementById("button6_2");
+      let select6_2 = document.getElementById("select6_2");
+      button6_2.addEventListener("click", function () {
+        let selectedIndex2 = select6_2.selectedIndex;
+        let selectedOption2 = select6_2.options[selectedIndex2];
+        alert("Выбранный пункт: " + selectedOption2.textContent + '!');
+      });
+    </script>
+  </body>
+</html>
