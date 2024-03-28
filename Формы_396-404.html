@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Формы</title>
+  </head>
+  <body>
+    <h1>Работа с текстареа в JavaScript</h1>
+    <h5>
+      №1 - Дан текстареа и абзац. По потери фокуса в текстареа запишите его
+      текст в абзац.
+    </h5>
+    <textarea id="textarea1" placeholder="Введите текст"></textarea>
+    <p id="paragraph1"></p>
+    <br />
+    <h1>Атрибут disabled в JavaScript</h1>
+    <h5>№2_1 - Дан инпут и кнопка. По нажатию на кнопку заблокируйте инпут.</h5>
+    <input type="text" id="input2_1" />
+    <button id="button2_1">Заблокировать</button>
+    <br />
+    <h5>
+      №2_2 - Дан инпут и две кнопки. Пусть нажатие на первую кнопку блокирует
+      инпут, а нажатие на вторую - отблокирует.
+    </h5>
+    <input type="text" id="input2_2" />
+    <button id="button2_20">Заблокировать</button>
+    <button id="button2_21">Разблокировать</button>
+    <br />
+    <h5>
+      №2_3 - Дан инпут и кнопка. По нажатию на кнопку узнайте, заблокирован
+      инпут или нет.
+    </h5>
+    <input type="text" id="input2_3" disabled />
+    <button id="button2_3">Узнать</button>
+    <br />
+    <h1>Работа с чекбоксами в JavaScript</h1>
+    <h5>
+      №3_1 - Дан чекбокс и две кнопки. По нажатию на первую кнопку установите
+      чекбокс в отмеченное состояние, а по нажатию на вторую - в неотмеченное.
+    </h5>
+    <input type="checkbox" id="input3_1" />
+    <button type="button" id="button3_10">Сделать неотмеченным</button>
+    <button type="button" id="button3_11">Сделать отмеченным</button>
+    <br />
+    <h5>
+      №3_2 - Дан чекбокс, кнопка и абзац. По нажатию на кнопку, если чекбокс
+      отмечен, выведите в абзац слово 'привет', а если чекбокс не отмечен, то
+      слово 'пока'.
+    </h5>
+    <input type="checkbox" id="input3_2" />
+    <p id="paragraph3_2"></p>
+    <button type="button" id="button3_2">Нажмите</button>
+    <br />
+    <h1>Чередование атрибутов без значений</h1>
+    <h5>
+      №4 - Дан чекбокс и кнопка. Сделайте так, чтобы каждый клик по кнопке
+      приводил к смене состояния чекбокса.
+    </h5>
+    <input type="checkbox" id="input4" />
+    <button type="button" id="button4">Нажмите</button>
+    <br />
+    <h1>Работа с радиокнопками в JavaScript</h1>
+    <h5>
+      №5 - Даны 3 радиокнопки, абзац и кнопка. По клику на кнопку выведите в
+      абзац value отмеченной радиокнопки.
+    </h5>
+    <input type="radio" name="radio5" value="1" />
+    <input type="radio" name="radio5" value="2" checked />
+    <input type="radio" name="radio5" value="3" />
+    <p id="paragraph5"></p>
+    <button type="button" id="button5">Нажмите</button>
+    <br />
+    <h1>Событие change в JavaScript</h1>
+    <h5>
+      №6_1 - Дан инпут и абзац. По изменению инпута выведите его текст в абзац.
+    </h5>
+    <p id="paragraph6_1"></p>
+    <input type="text" id="input6_1" />
+    <br />
+    <h5>
+      №6_2 - Дан чекбокс. По изменению чебокса выведите на экран его новое
+      состояние.
+    </h5>
+    <input type="checkbox" id="input6_2" />
+    <br />
+    <h5>
+      №6_3 - Дан инпут. По его изменению проверьте, количество символов в нем
+      меньше 5-ти или нет. Если меньше - покрасьте границу инпута в зеленый
+      цвет, а если больше - в красный.
+    </h5>
+    <input type="text" id="input6_3" />
+    <br />
+    <h1>Событие input в JavaScript</h1>
+    <h5>
+      №7_1 - Дан инпут. Пусть в него вводится текст. Как только длина текста
+      достигнет 5-ти, выведите на экран сообщение об этом.
+    </h5>
+    <input type="text" id="input7_1" />
+    <br />
+    <h5>
+      №7_2 - Дан инпут. Пусть в него разрешено ввести 5 символов. Дан также
+      абзац. По мере ввода символов в инпут пишите, сколько еще символов можно
+      ввести. Когда количество символов превысит 5-ти, то в абзац выводите то,
+      на сколько символов превышена длина текста.
+    </h5>
+    <p id="paragraph7_2"></p>
+    <input type="text" id="input7_2" />
+    <br />
+    <h1>Методы focus и blur в JavaScript</h1>
+    <h5>
+      №8 - Даны два инпута. Сделайте так, чтобы после ввода двух символов фокус
+      ввода переходил ко второму инпуту, а после ввода двух символов в этот
+      инпут - фокус из него убирался.
+    </h5>
+    <input type="text" id="input8_1" />
+    <input type="text" id="input8_2" />
+    <br />
+    <h1>Поиск ошибок в коде с формами в JavaScript</h1>
+    <h5>№9_1 - По потери фокуса текст из textarea должен записаться в див:</h5>
+    <textarea id="textarea9_1"></textarea>
+    <div id="div9_1"></div>
+    <br />
+    <h5>
+      №9_2 - По клику на кнопку в див должно записаться или одно, или другое
+      значение:
+    </h5>
+    <input type="checkbox" id="input9_2" />
+    <div id="div9_2"></div>
+    <button id="button9_2">button</button>
+    <br />
+    <h5>
+      №9_3 - По клику на кнопку, если чекбокс отмечен, то должно вывестись одно
+      значение, а если не отмечен - другое:
+    </h5>
+    <input type="checkbox" id="input9_3" />
+    <button id="button9_3">button</button>
+    <script>
+      // 1
+      let textarea1 = document.getElementById("textarea1");
+      let paragraph1 = document.getElementById("paragraph1");
+      textarea1.addEventListener("blur", function () {
+        paragraph1.textContent = textarea1.value;
+      });
+
+      // 2_1
+      let button2_1 = document.getElementById("button2_1");
+      let input2_1 = document.getElementById("input2_1");
+      button2_1.addEventListener("click", function () {
+        input2_1.disabled = true;
+      });
+
+      // 2_2
+      let button2_20 = document.getElementById("button2_20");
+      let button2_21 = document.getElementById("button2_21");
+      let input2_2 = document.getElementById("input2_2");
+      button2_20.addEventListener("click", function () {
+        input2_2.disabled = true;
+      });
+      button2_21.addEventListener("click", function () {
+        input2_2.disabled = false;
+      });
+
+      // 2_3
+      let button2_3 = document.getElementById("button2_3");
+      let input2_3 = document.getElementById("input2_3");
+      button2_3.addEventListener("click", function () {
+        if (input2_3.disabled == true) {
+          alert("Заблокирован");
+        } else {
+          alert("Разблокирован");
+        }
+      });
+
+      // 3_1
+      let input3_1 = document.getElementById("input3_1");
+      let button3_10 = document.getElementById("button3_10");
+      let button3_11 = document.getElementById("button3_11");
+      button3_10.addEventListener("click", function () {
+        input3_1.checked = false;
+      });
+      button3_11.addEventListener("click", function () {
+        input3_1.checked = true;
+      });
+
+      // 3_2
+      let input3_2 = document.getElementById("input3_2");
+      let paragraph3_2 = document.getElementById("paragraph3_2");
+      let button3_2 = document.getElementById("button3_2");
+      button3_2.addEventListener("click", function () {
+        if (input3_2.checked == true) {
+          paragraph3_2.textContent = "Привет";
+        } else {
+          paragraph3_2.textContent = "Пока";
+        }
+      });
+
+      // 4
+      let input4 = document.getElementById("input4");
+      let button4 = document.getElementById("button4");
+      button4.addEventListener("click", function () {
+        input4.checked = !input4.checked;
+      });
+
+      // 5
+      let radios5 = document.querySelectorAll(
+        'input[type="radio"][name="radio5"]'
+      );
+      let button5 = document.getElementById("button5");
+      let paragraph5 = document.getElementById("paragraph5");
+      button5.addEventListener("click", function () {
+        for (let radio5 of radios5) {
+          if (radio5.checked) {
+            paragraph5.textContent = "Выбрано: " + radio5.value;
+          }
+        }
+      });
+
+      // 6_1
+      let paragraph6_1 = document.getElementById("paragraph6_1");
+      let input6_1 = document.getElementById("input6_1");
+      input6_1.addEventListener("change", function () {
+        paragraph6_1.textContent = this.value;
+      });
+
+      // 6_2
+      let input6_2 = document.getElementById("input6_2");
+      input6_2.addEventListener("change", function () {
+        if (input6_2.checked) {
+          alert("Чекбокс отмечен");
+        } else {
+          alert("Чекбокс не отмечен");
+        }
+      });
+
+      // 6_3
+      let input6_3 = document.getElementById("input6_3");
+      input6_3.addEventListener("change", function () {
+        if (this.value.length < 5) {
+          this.style.border = "2px solid green";
+        } else {
+          this.style.border = "2px solid red";
+        }
+      });
+
+      // 7_1
+      let input7_1 = document.getElementById("input7_1");
+      input7_1.addEventListener("input", function () {
+        if (this.value.length == 5) {
+          alert("Длина текста равна 5");
+        }
+      });
+
+      // 7_2
+      let input7_2 = document.getElementById("input7_2");
+      let paragraph7_2 = document.getElementById("paragraph7_2");
+      input7_2.addEventListener("input", function () {
+        let input7_2Value = input7_2.value;
+        let remainingCharacters = 5 - input7_2Value.length;
+        if (remainingCharacters >= 0) {
+          paragraph7_2.textContent = `Можно ввести еще ${remainingCharacters} символов`;
+        } else {
+          paragraph7_2.textContent = `Превышение на ${Math.abs(
+            remainingCharacters
+          )} символов`;
+        }
+      });
+
+      // 8
+      let input8_1 = document.getElementById("input8_1");
+      let input8_2 = document.getElementById("input8_2");
+      input8_1.addEventListener("input", function () {
+        if (this.value.length == 2) {
+          input8_2.focus();
+        }
+      });
+
+      input8_2.addEventListener("input", function () {
+        if (this.value.length == 2) {
+          this.blur();
+        }
+      });
+
+      // 9_1
+      let textarea9_1 = document.querySelector("#textarea9_1");
+      let div9_1 = document.querySelector("#div9_1");
+      textarea9_1.addEventListener("blur", function () {
+        div9_1.textContent = textarea9_1.value;
+      });
+
+      // 9_2
+      let input9_2 = document.querySelector("#input9_2");
+      let button9_2 = document.querySelector("#button9_2");
+      let div9_2 = document.querySelector("#div9_2");
+      button9_2.addEventListener("click", function () {
+        if (input9_2.checked) {
+          div9_2.textContent = "111";
+        } else {
+          div9_2.textContent = "222";
+        }
+      });
+
+      // 9_3
+      let input9_3 = document.querySelector("#input9_3");
+      let button9_3 = document.querySelector("#button9_3");
+      button9_3.addEventListener("click", function () {
+        if ((input9_3.checked == true)) {
+          console.log("+++");
+        } else {
+          console.log("---");
+        }
+      });
+    </script>
+  </body>
+</html>
