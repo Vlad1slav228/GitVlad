@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Объект Event</title>
+    <style>
+      div,
+      ul,
+      li {
+        padding: 20px;
+      }
+
+      div {
+        border: 1px solid red;
+      }
+      ul {
+        border: 1px solid orange;
+      }
+      li {
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Основы работы с объектом Event в JavaScript</h1>
+    <h5>
+      № 1 - Самостоятельно проделайте описанные манипуляции и выведите объект с
+      событием в консоль. Изучите структуру этого объекта.
+    </h5>
+    <button id="elem1">text</button>
+    <br />
+    <h1>Координаты события в JavaScript</h1>
+    <h5>
+      № 2 - Сделайте так, чтобы при движении мышки по странице, отображались
+      координаты курсора, подобно тому, как это сделано в следующем образце:
+    </h5>
+    <div id="elem2">0 : 0</div>
+    <br />
+    <h1>Тип события в объекте Event в JavaScript</h1>
+    <h5>
+      № 3 - Допишите код функции func так, чтобы при клике на элемент этот
+      элемент красился в зеленый цвет, а при двойном клике - в красный.
+    </h5>
+    <button id="elem3">text</button>
+    <br />
+    <h1>Элемент события в объекте Event в JavaScript</h1>
+    <h5>
+      № 4 - Привяжите к тегу ul обработчик клика. В этом обработчике проверяйте
+      с помощью свойства tagName, по какому тегу был клик. Если клик был по тегу
+      li - добавьте в конец текста этого тега восклицательный знак. А если клик
+      был по тегу ul - выведите информацию об этом в консоль.
+    </h5>
+    <ul id="elem4">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h1>Получение нажатых клавиш в JavaScript</h1>
+    <h5>
+      №5_1 - Сделайте инпут, который будет по вводу выводить значения введенных
+      клавиш и их коды.
+    </h5>
+    <input type="text" id="input5_1" />
+    <br />
+    <h5>
+      №5_2 - Дан абзац и инпут. В него вводится текст и нажимается клавиша
+      Enter. Сделайте так, чтобы в этот момент введенный текст попадал в абзац
+      под инпутом, а содержимое инпута очищалось.
+    </h5>
+    <input type="text" id="input5_2" />
+    <p id="paragraph5_2"></p>
+    <br />
+    <h1>Отслеживание клавиш-модификаторов в JavaScript</h1>
+    <h5>
+      №6_1 - Дан элемент. Сделайте так, чтобы по клику на него он красился в
+      красный цвет, но только если в момент клика нажата клавиша Alt.
+    </h5>
+    <button id="elem6_1">text</button>
+    <br />
+    <h5>
+      №6_2 - Сделайте так, чтобы по клику на любую li, в конец ее текста
+      добавлялось число 1, если нажата клавиша Ctrl, и число 2, если нажата
+      клавиша Shift.
+    </h5>
+    <ul id="elem6_2">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h1>Отмена действия по умолчанию в JavaScript</h1>
+    <h5>
+      №7_1 - Даны ссылки. Сделайте так, чтобы по клику на ссылку ей в конец
+      записывался ее href, а перехода по ссылке не происходило.
+    </h5>
+    <a href="/qwerty" id="elem7_1">Ссылка</a>
+    <br />
+    <h5>
+      №7_2 - Даны два инпута, абзац и ссылка. Пусть в инпуты вводятся числа.
+      Сделайте так, чтобы по клику на ссылку в абзац записалась сумма введенных
+      чисел.
+    </h5>
+    <input type="text" id="input7_20" />
+    <input type="text" id="input7_21" />
+    <p id="paragraph7_2"></p>
+    <a href="/" id="elem7_2">Ссылка</a>
+    <br />
+    <h1>Получение целевого элемента при всплытии событий</h1>
+    <h5>
+      №8_1 - Навешайте на див обработчик клика. В этом обработчике определите, в
+      каком из тегов сработало событие.
+    </h5>
+    <div id="div8_1">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+    <br />
+    <h5>
+      №8_2 - Модифицируйте предыдущую задачу. Сделайте так, чтобы при клике на
+      li, ей в конец добавлялся восклицательный знак, а при клике на ul в
+      консоль выводилась информация об этом.
+    </h5>
+    <div id="div8_2">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+    <script>
+      "use sctrict";
+      // 1
+      let elem1 = document.getElementById("elem1");
+      elem1.addEventListener("click", function (event) {
+        alert(event);
+      });
+
+      // 2
+      let elem2 = document.getElementById("elem2");
+      document.addEventListener("mousemove", function (event) {
+        elem2.innerHTML = event.pageX + ":" + event.pageY;
+      });
+
+      // 3
+      let elem3 = document.querySelector("#elem3");
+      elem3.addEventListener("click", func);
+      elem3.addEventListener("dblclick", func);
+      function func(event) {
+        if (event.type == "click") {
+          elem3.style.backgroundColor = "green";
+        } else if (event.type == "dblclick") {
+          elem3.style.backgroundColor = "red";
+        }
+      }
+
+      // 4
+      let elem4 = document.getElementById("elem4");
+      elem4.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          event.target.textContent += "!";
+        } else if (event.target.tagName === "UL") {
+          console.log("Click on ul tag");
+        }
+      });
+
+      // 5_1
+      let input5_1 = document.getElementById("input5_1");
+      input5_1.addEventListener("keypress", function (event) {
+        console.log(event.key + " " + event.code);
+      });
+
+      // 5_2
+      let input5_2 = document.getElementById("input5_2");
+      let paragraph5_2 = document.getElementById("paragraph5_2");
+      input5_2.addEventListener("keypress", function (event) {
+        if (event.key == "Enter") {
+          paragraph5_2.textContent = input5_2.value;
+          input5_2.value = "";
+        }
+      });
+
+      // 6_1
+      let elem6_1 = document.getElementById("elem6_1");
+      elem6_1.addEventListener("click", function (event) {
+        if (event.altKey) {
+          elem6_1.style.backgroundColor = "red";
+        }
+      });
+
+      // 6_2
+      let elem6_2 = document.getElementById("elem6_2");
+      elem6_2.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          if (event.ctrlKey) {
+            event.target.textContent += 1;
+          } else if (event.shiftKey) {
+            event.target.textContent += 2;
+          }
+        }
+      });
+
+      // 7_1
+      let elem7_1 = document.getElementById("elem7_1");
+      elem7_1.addEventListener("click", function (event) {
+        event.preventDefault();
+        elem7_1.textContent += elem7_1.getAttribute("href");
+      });
+
+      // 7_2
+      let input7_20 = document.getElementById("input7_20");
+      let input7_21 = document.getElementById("input7_21");
+      let paragraph7_2 = document.getElementById("paragraph7_2");
+      let elem7_2 = document.getElementById("elem7_2");
+      elem7_2.addEventListener("click", function (event) {
+        event.preventDefault();
+        paragraph7_2.textContent =
+          Number(input7_20.value) + Number(input7_21.value);
+      });
+
+      // 8_1
+      let div8_1 = document.getElementById("div8_1");
+      div8_1.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          alert("Событие произошло в теге <li>");
+        }
+        if (event.target.tagName === "UL") {
+          alert("Событие произошло в теге <ul>");
+        }
+      });
+
+      // 8_2
+      let div8_2 = document.getElementById("div8_2");
+      div8_2.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          event.target.textContent += '!';
+        }
+        if (event.target.tagName === "UL") {
+          console.log("Событие произошло в теге <ul>");
+        }
+      });
+    </script>
+  </body>
+</html>
