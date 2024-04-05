@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика</title>
+    <style>
+      td {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+      }
+
+      .strike-through {
+        text-decoration: line-through;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Создание элементов из массива на JavaScript</h1>
+    <h5>
+      1 - Модифицируйте мой код так, чтобы по клику на абзац к его содержимому
+      прибавлялась единица.
+    </h5>
+    <div id="parent1"></div>
+    <br />
+    <h1>Практика на создание списков ul на JavaScript</h1>
+    <h5>
+      2_1 - Дан массив. Вставьте элементы этого массива в конец ul так, чтобы
+      каждый элемент стоял в своем li.
+    </h5>
+    <ul id="elem2_1"></ul>
+    <br />
+    <h5>
+      2_2 - Модифицируйте предыдущую задачу так, чтобы по клику на любой из
+      вставленных элементов на экран выводился текст этого элемента.
+    </h5>
+    <ul id="elem2_2"></ul>
+    <br />
+    <h5>
+      2_3 - Модифицируйте предыдущую задачу так, чтобы по клику на li ей в конец
+      добавлялся '!'.
+    </h5>
+    <ul id="elem2_3"></ul>
+    <br />
+    <h5>
+      2_4 - Модифицируйте предыдущую задачу так, чтобы по повторное нажатие на
+      li не приводило к добавлению второго '!'.
+    </h5>
+    <ul id="elem2_4"></ul>
+    <br />
+    <h1>Создание HTML таблиц на JavaScript</h1>
+    <h5>
+      3_1 - Дана пустая HTML таблица. С помощью двух вложенных циклов for
+      заполните эту таблицу 5-ю рядами с 5-ю колонками.
+    </h5>
+    <table id="table3_1" border="1"></table>
+    <br />
+    <h5>
+      3_2 - Модифицируйте предыдущую задачу так, чтобы таблица создавалась
+      размером 10 рядов на 5 колонок.
+    </h5>
+    <table id="table3_2" border="1"></table>
+    <br />
+    <h5>
+      3_3 - Модифицируйте предыдущую задачу так, чтобы в каждую td добавлялся
+      текст 'x'.
+    </h5>
+    <table id="table3_3" border="1"></table>
+    <br />
+    <h5>
+      3_4 - Реализуйте генератор таблиц, ширина и высота таблиц задается в двух
+      инпутах (например, таблица 5 на 10 ячеек).
+    </h5>
+    <input type="text" id="input3_40" placeholder="Введите количество строк" />
+    <input
+      type="text"
+      id="input3_41"
+      placeholder="Введите количество столбцов"
+    />
+    <button id="button3_4">Создать таблицу</button>
+    <table id="table3_4" border="1"></table>
+    <br />
+    <h1>Последовательное заполнение HTML таблиц</h1>
+    <h5>
+      4_1 - Выведите на экран HTML таблицу размером 5 рядов на 5 колонок так,
+      чтобы в ее ячейках последовательно стояли числа от 1 до 25.
+    </h5>
+    <table border="1">
+      <tbody id="tableBody4_1"></tbody>
+    </table>
+    <br />
+    <h5>
+      4_2 - Модифицируйте предыдущую задачу так, чтобы в ячейках таблицы были
+      записаны четные числа в промежутке от 2 до 50.
+    </h5>
+    <table border="1">
+      <tbody id="tableBody4_2"></tbody>
+    </table>
+    <br />
+    <h1>Создание HTML таблицы из массива на JavaScript</h1>
+    <h5>
+      5_1 - Не подсматривая в теоретическую часть урока, выведите элементы
+      приведенного массива в виде HTML таблицы table.
+    </h5>
+    <table id="table5_1"></table>
+    <br />
+    <h5>
+      5_2 - Модифицируйте предыдущую задачу так, чтобы в таблицу записывались не
+      элементы, а квадраты этих элементов.
+    </h5>
+    <table id="table5_2"></table>
+    <br />
+    <h1>Создание HTML таблицы из массива объектов</h1>
+    <h5>
+      6_1 - Дан следующий массив с работниками. Выведите элементы этого массива
+      в виде HTML таблицы.
+    </h5>
+    <table id="table6_1" border="1"></table>
+    <br />
+    <h5>
+      6_2 - Модифицируйте предыдущую задачу так, чтобы по клику на любую ячейку
+      с возрастом ее содержимое увеличивалось на 1.
+    </h5>
+    <table id="table6_2" border="1"></table>
+    <br />
+    <h5>
+      6_3 - Модифицируйте предыдущую задачу так, чтобы по клику на любую ячейку
+      с зарплатой ее содержимое увеличивалось на 10%.
+    </h5>
+    <table id="table6_3" border="1"></table>
+    <br />
+    <h1>Добавление рядов и колонок в HTML таблицу</h1>
+    <h5>
+      7_1 - Сделайте кнопку, по нажатию на которую в таблицу будет добавляться
+      новый ряд.
+    </h5>
+    <table id="table7_1" border="1">
+      <thead>
+        <tr>
+          <th>Заголовок 1</th>
+          <th>Заголовок 2</th>
+          <th>Заголовок 3</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody7_1">
+        <tr>
+          <td>Ячейка 1</td>
+          <td>Ячейка 2</td>
+          <td>Ячейка 3</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="button7_1">Добавить ряд</button>
+    <br />
+    <h5>
+      7_2 - Дана также кнопка. Сделайте так, чтобы по нажатию на кнопку таблица
+      увеличивалась на один ряд и на одну колонку.
+    </h5>
+    <table id="table7_2">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <button id="button7_2">Увеличить таблицу</button>
+    <br />
+    <h1>Изменение ячеек HTML таблицы на JavaScript</h1>
+    <h5>
+      8 - Пусть дана некоторая HTML таблица с числами и кнопка. По нажатию на
+      кнопку увеличьте число в каждой ячейки таблицы в два раза.
+    </h5>
+    <table id="table8" border="1">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+    </table>
+    <button id="button8">Увеличить числа в два раза</button>
+    <br />
+    <h1>Самоудаление новых элементов на JavaScript</h1>
+    <h5>
+      9 - Сделайте так, чтобы по клику на кнопку в список добавлялся новый
+      элемент. Сделайте так, чтобы любая li удалялась по клику на нее. Речь идет
+      как о тех li, которые уже есть в списке, так о новых, созданных после
+      нажатия на кнопку.
+    </h5>
+    <ul id="parent9">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <input type="submit" id="button9" />
+    <br />
+    <h1>Ссылка на удаление элемента на JavaScript</h1>
+    <h5>
+      10 - Самостоятельно, не подсматривая в мой код, решите описанную задачу.
+    </h5>
+    <div id="parent10">
+      <p id="elem10">text</p>
+      <a href="" id="remove10">remove</a>
+    </div>
+    <br />
+    <h1>Создание ссылок для удаление элементов на JavaScript</h1>
+    <h5>
+      11_1 - Дан тег ul. Добавьте в конец каждого тега li ссылку на удаления
+      этого li из списка.
+    </h5>
+    <ul id="parentList11_1">
+      <li>Элемент списка 1 <a href="" class="deleteLink11_1">Удалить</a></li>
+      <li>Элемент списка 2 <a href="" class="deleteLink11_1">Удалить</a></li>
+      <li>Элемент списка 3 <a href="" class="deleteLink11_1">Удалить</a></li>
+    </ul>
+    <br />
+    <h5>
+      11_2 - Дана HTML таблица. Добавьте в нее еще одну колонку, в которой для
+      каждого ряда таблицы будет стоять ссылка на удаление этого ряда.
+    </h5>
+    <table id="table11_2" border="1">
+      <thead>
+        <tr>
+          <th>Заголовок 1</th>
+          <th>Заголовок 2</th>
+          <th>Удалить</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ячейка 1-1</td>
+          <td>Ячейка 1-2</td>
+          <td><a href="" class="deleteLink11_2">Удалить</a></td>
+        </tr>
+        <tr>
+          <td>Ячейка 2-1</td>
+          <td>Ячейка 2-2</td>
+          <td><a href="" class="deleteLink11_2">Удалить</a></td>
+        </tr>
+        <tr>
+          <td>Ячейка 3-1</td>
+          <td>Ячейка 3-2</td>
+          <td><a href="" class="deleteLink11_2">Удалить</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h1>Редактирование в группе элементов на JavaScript</h1>
+    <h5>
+      12_1 - Дан тег ul. Сделайте так, чтобы по клику на любую li в ней
+      появлялся инпут, с помощью которого можно будет поредатировать текст этой
+      li.
+    </h5>
+    <ul id="elem12_1">
+      <li>Элемент списка 1</li>
+      <li>Элемент списка 2</li>
+      <li>Элемент списка 3</li>
+    </ul>
+    <br />
+    <h5>
+      12_2 - Дана HTML таблица. Сделайте так, чтобы по клику на любую ячейку в
+      ней появлялся инпут для редактирования текста этой ячейки.
+    </h5>
+    <table id="table12_2" border="1">
+      <tr>
+        <td>Ячейка 1</td>
+        <td>Ячейка 2</td>
+        <td>Ячейка 3</td>
+      </tr>
+      <tr>
+        <td>Ячейка 4</td>
+        <td>Ячейка 5</td>
+        <td>Ячейка 6</td>
+      </tr>
+      <tr>
+        <td>Ячейка 7</td>
+        <td>Ячейка 8</td>
+        <td>Ячейка 9</td>
+      </tr>
+    </table>
+    <br />
+    <h1>Одновременное редактирование и удаление элементов</h1>
+    <h5>
+      13_1 - Добавьте ссылку на удаление в конец каждого абзаца. Сделайте так,
+      чтобы по клику на span в нем появлялся инпут для редактирования.
+    </h5>
+    <div id="parent13_1">
+      <p><span>text1</span> <a href="#" class="deleteLink13_1">Удалить</a></p>
+      <p><span>text2</span> <a href="#" class="deleteLink13_1">Удалить</a></p>
+      <p><span>text3</span> <a href="#" class="deleteLink13_1">Удалить</a></p>
+    </div>
+    <br />
+    <h5>
+      13_2 - Оберните сначала текст абзаца в теги span, добавьте к этим тегам
+      возможность редактирования, а затем добавьте в конец каждого абзаца ссылку
+      на удаление.
+    </h5>
+    <div id="parent13_2">
+      <p>text1</p>
+      <p>text2</p>
+      <p>text3</p>
+    </div>
+    <br />
+    <h1>Стилизация элементов на JavaScript</h1>
+    <h5>
+      14_1 - Добавьте в конец каждого абзаца ссылку, по клику на которую текст
+      абзаца будет перечеркиваться (а ссылка - нет).
+    </h5>
+    <p>text1 <a href="#" class="strikeLink14_1">Перечеркнуть</a></p>
+    <p>text2 <a href="#" class="strikeLink14_1">Перечеркнуть</a></p>
+    <p>text3 <a href="#" class="strikeLink14_1">Перечеркнуть</a></p>
+    <br />
+    <h5>
+      14_2 - Модифицируйте предыдущую задачу так, чтобы после нажатия на ссылку
+      эта ссылка удалялась из абзаца (а текст абзаца становился перечеркнутым).
+    </h5>
+    <p>text1 <a href="#" class="strikeLink14_2">Перечеркнуть</a></p>
+    <p>text2 <a href="#" class="strikeLink14_2">Перечеркнуть</a></p>
+    <p>text3 <a href="#" class="strikeLink14_2">Перечеркнуть</a></p>
+    <br />
+    <h1>Кнопки для скрытия и показа элемента на JavaScript</h1>
+    <h5>
+      15 - Модифицируйте мой код так, чтобы была только одна кнопка. Пусть по
+      первому клику на эту кнопку элемент показывается, а по второму -
+      скрывается.
+    </h5>
+    <p id="elem15">text</p>
+    <input type="submit" id="show" value="show" />
+    <input type="submit" id="hide" value="hide" />
+    <br />
+    <h1>Активация элементов на JavaScript</h1>
+    <h5>
+      16_1 - Дана HTML список ul. Сделайте так, чтобы по нажатию на любой пункт
+      списка он активировался красным фоном.
+    </h5>
+    <ul id="elem16_1">
+      <li>Пункт 1</li>
+      <li>Пункт 2</li>
+      <li>Пункт 3</li>
+    </ul>
+    <br />
+    <h5>
+      16_2 - Модифицируйте предыдущую задачу так, чтобы по нажатию на
+      активированный пункт списка активация с него снималась.
+    </h5>
+    <ul id="elem16_2">
+      <li>Пункт 1</li>
+      <li>Пункт 2</li>
+      <li>Пункт 3</li>
+    </ul>
+    <br />
+    <h1>Практика на изменение элементов на JavaScript</h1>
+    <h5>17_1 - Дан массив. Выведите его элементы в виде списка ul.</h5>
+    <ul id="elem17_1"></ul>
+    <br />
+    <h5>
+      17_2 - Модифицируйте предыдущую задачу так, чтобы по клику на любую li в
+      ней появлялся инпут, с помощью которого ее можно будет поредактировать.
+    </h5>
+    <ul id="elem17_2">
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемент 3</li>
+      <li>Элемент 4</li>
+      <li>Элемент 5</li>
+    </ul>
+    <br />
+    <h5>
+      17_3 - Модифицируйте предыдущую задачу так, чтобы под списком был инпут, с
+      помощью которого можно будет добавить новый элемент в конец списка ul.
+      Сделайте так, чтобы новые li также можно было редактировать.
+    </h5>
+    <ul id="elem17_3">
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемент 3</li>
+      <li>Элемент 4</li>
+      <li>Элемент 5</li>
+    </ul>
+    <input type="text" id="input17_3" placeholder="Введите новый элемент" />
+    <button id="button17_3">Добавить</button>
+    <br />
+    <h5>
+      17_4 - Модифицируйте предыдущую задачу так, чтобы в конце каждой li стояла
+      ссылка 'удалить', с помощью которой можно будет удалить эту li из ul.
+    </h5>
+    <ul id="elem17_4">
+      <li>Элемент 1 <a href="#" class="deleteItem17_4">удалить</a></li>
+      <li>Элемент 2 <a href="#" class="deleteItem17_4">удалить</a></li>
+      <li>Элемент 3 <a href="#" class="deleteItem17_4">удалить</a></li>
+      <li>Элемент 4 <a href="#" class="deleteItem17_4">удалить</a></li>
+      <li>Элемент 5 <a href="#" class="deleteItem17_4">удалить</a></li>
+    </ul>
+    <input type="text" id="input17_4" placeholder="Введите новый элемент" />
+    <button id="button17_4">Добавить</button>
+    <br />
+    <h5>
+      17_5 - Модифицируйте предыдущую задачу так, чтобы в конце каждой li также
+      стояла ссылка 'перечеркнуть', с помощью которой можно будет перечеркнуть
+      текст данного тега li.
+    </h5>
+    <ul id="elem17_5">
+      <li>Элемент 1 <a href="#" class="deleteItem17_5">удалить</a></li>
+      <li>Элемент 2 <a href="#" class="deleteItem17_5">удалить</a></li>
+      <li>Элемент 3 <a href="#" class="deleteItem17_5">удалить</a></li>
+      <li>Элемент 4 <a href="#" class="deleteItem17_5">удалить</a></li>
+      <li>Элемент 5 <a href="#" class="deleteItem17_5">удалить</a></li>
+    </ul>
+    <input type="text" id="input17_5" placeholder="Введите новый элемент" />
+    <button id="button17_5">Добавить</button>
+    <br />
+    <h5>
+      17_6 - Дан следующий массив с работниками: Выведите этих работников в HTML
+      таблице.
+    </h5>
+    <table id="employeesTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody id="employeesBody"></tbody>
+    </table>
+    <br />
+    <h5>
+      17_7 - Добавьте ячейкам созданной таблицы возможность редактирования.
+    </h5>
+    <table id="employeesTable2">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody id="employeesBody2"></tbody>
+    </table>
+    <br />
+    <h5>
+      17_8 - Добавьте в вашу таблицу новую колонку со ссылкой на удаления ряда
+      из таблицы.
+    </h5>
+    <table id="employeesTable3">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="employeesBody3"></tbody>
+    </table>
+    <br />
+    <h5>
+      17_9 - Сделайте под таблицей 3 инпута и кнопку для добавление нового
+      работника. Пусть в инпуты вводятся имя, возраст и зарплата, и по нажатию
+      на кнопку новый работник добавляется в таблицу. Реализуйте редактирование
+      ячеек для вновь добавленных работников.
+    </h5>
+    <table id="employeesTable4">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="employeesBody4"></tbody>
+    </table>
+    <div>
+      <input type="text" id="nameInput" placeholder="Name" />
+      <input type="text" id="ageInput" placeholder="Age" />
+      <input type="text" id="salaryInput" placeholder="Salary" />
+      <button id="addEmployeeButton">Add Employee</button>
+    </div>
+    <br />
+    <h5>
+      17_10 - Дан следующий массив с работниками: Выведите на экран каждого
+      работника в своем теге li тега ul.
+    </h5>
+    <script>
+      // 1
+      let parent1 = document.querySelector("#parent1");
+      let arr = [1, 2, 3, 4, 5];
+      for (let elem of arr) {
+        let p = document.createElement("p");
+        p.textContent = elem;
+        p.addEventListener("click", function () {
+          let num1 = parseInt(this.textContent);
+          this.textContent = num1 + 1;
+        });
+        parent1.appendChild(p);
+      }
+
+      // 2_1
+      let ul2_1 = document.getElementById("elem2_1");
+      let arr2_1 = ["Элемент 1", "Элемент 2", "Элемент 3"];
+      arr2_1.forEach(function (item2_1) {
+        let li2_1 = document.createElement("li");
+        li2_1.textContent = item2_1;
+        ul2_1.appendChild(li2_1);
+      });
+
+      // 2_2
+      let ul2_2 = document.getElementById("elem2_2");
+      let arr2_2 = ["Элемент 1", "Элемент 2", "Элемент 3"];
+      arr2_2.forEach(function (item2_2) {
+        let li2_2 = document.createElement("li");
+        li2_2.textContent = item2_2;
+        li2_2.addEventListener("click", function () {
+          alert(this.textContent);
+        });
+        ul2_2.appendChild(li2_2);
+      });
+
+      // 2_3
+      let ul2_3 = document.getElementById("elem2_3");
+      let arr2_3 = ["Элемент 1", "Элемент 2", "Элемент 3"];
+      arr2_3.forEach(function (item2_3) {
+        let li2_3 = document.createElement("li");
+        li2_3.textContent = item2_3;
+        li2_3.addEventListener("click", function () {
+          this.textContent += "!";
+        });
+        ul2_3.appendChild(li2_3);
+      });
+
+      // 2_4
+      let ul2_4 = document.getElementById("elem2_4");
+      let arr2_4 = ["Элемент 1", "Элемент 2", "Элемент 3"];
+      arr2_4.forEach(function (item2_4) {
+        let li2_4 = document.createElement("li");
+        li2_4.textContent = item2_4;
+        li2_4.addEventListener("click", function func() {
+          this.textContent += "!";
+          this.removeEventListener("click", func);
+        });
+        ul2_4.appendChild(li2_4);
+      });
+
+      // 3_1
+      let table3_1 = document.getElementById("table3_1");
+      for (let i = 0; i < 5; i++) {
+        let tr3_1 = document.createElement("tr");
+        for (let j = 0; j < 5; j++) {
+          let td3_1 = document.createElement("td");
+          td3_1.textContent = `Строка ${i + 1}, Столбец ${j + 1}`;
+          tr3_1.appendChild(td3_1);
+        }
+        table3_1.appendChild(tr3_1);
+      }
+
+      // 3_2
+      let table3_2 = document.getElementById("table3_2");
+      for (let i = 0; i < 10; i++) {
+        let tr3_2 = document.createElement("tr");
+        for (let j = 0; j < 5; j++) {
+          let td3_2 = document.createElement("td");
+          td3_2.textContent = `Строка ${i + 1}, Столбец ${j + 1}`;
+          tr3_2.appendChild(td3_2);
+        }
+        table3_2.appendChild(tr3_2);
+      }
+
+      // 3_3
+      let table3_3 = document.getElementById("table3_3");
+      for (let i = 0; i < 10; i++) {
+        let tr3_3 = document.createElement("tr");
+        for (let j = 0; j < 5; j++) {
+          let td3_3 = document.createElement("td");
+          td3_3.textContent = "x";
+          tr3_3.appendChild(td3_3);
+        }
+        table3_3.appendChild(tr3_3);
+      }
+
+      // 3_4
+      let button3_4 = document.getElementById("button3_4");
+      button3_4.addEventListener("click", function () {
+        let rows3_4 = +document.getElementById("input3_40").value;
+        let cols3_4 = +document.getElementById("input3_41").value;
+        generateTable(rows3_4, cols3_4);
+      });
+      function generateTable(numRows, numCols) {
+        let table = document.getElementById("table3_4");
+        table.innerHTML = "";
+        for (let i = 0; i < numRows; i++) {
+          let row = document.createElement("tr");
+          for (let j = 0; j < numCols; j++) {
+            let cell = document.createElement("td");
+            cell.textContent = "";
+            row.appendChild(cell);
+          }
+          table.appendChild(row);
+        }
+      }
+
+      // 4_1
+      let tableBody4_1 = document.getElementById("tableBody4_1");
+      let count = 1;
+      for (let i = 0; i < 5; i++) {
+        let row4_1 = document.createElement("tr");
+        for (let j = 0; j < 5; j++) {
+          let cell4_1 = document.createElement("td");
+          cell4_1.textContent = count;
+          count++;
+          row4_1.appendChild(cell4_1);
+        }
+        tableBody4_1.appendChild(row4_1);
+      }
+
+      // 4_2
+      let tableBody4_2 = document.getElementById("tableBody4_2");
+      let start = 2;
+      for (let i = 0; i < 5; i++) {
+        let row4_2 = document.createElement("tr");
+        for (let j = 0; j < 5; j++) {
+          let cell4_2 = document.createElement("td");
+          cell4_2.textContent = start;
+          start += 2;
+          row4_2.appendChild(cell4_2);
+        }
+        tableBody4_2.appendChild(row4_2);
+      }
+
+      // 5_1
+      let arr5_1 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12],
+      ];
+      let table5_1 = document.querySelector("#table5_1");
+      for (let subArr5_1 of arr5_1) {
+        let tr5_1 = document.createElement("tr");
+        for (let elem5_1 of subArr5_1) {
+          let td5_1 = document.createElement("td");
+          td5_1.textContent = elem5_1;
+          tr5_1.appendChild(td5_1);
+        }
+        table5_1.appendChild(tr5_1);
+      }
+
+      // 5_2
+      let arr5_2 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12],
+      ];
+      let table5_2 = document.querySelector("#table5_2");
+      for (let subArr5_2 of arr5_2) {
+        let tr5_2 = document.createElement("tr");
+        for (let elem5_2 of subArr5_2) {
+          let td5_2 = document.createElement("td");
+          td5_2.textContent = elem5_2 * elem5_2;
+          tr5_2.appendChild(td5_2);
+        }
+        table5_2.appendChild(tr5_2);
+      }
+
+      // 6_1
+      let table6_1 = document.getElementById("table6_1");
+      let employees6_1 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+      employees6_1.forEach(function (employee6_1) {
+        let row6_1 = document.createElement("tr");
+        for (let key6_1 in employee6_1) {
+          let cell6_1 = document.createElement("td");
+          cell6_1.textContent = employee6_1[key6_1];
+          row6_1.appendChild(cell6_1);
+        }
+        table6_1.appendChild(row6_1);
+      });
+
+      // 6_2
+      let table6_2 = document.getElementById("table6_2");
+      let employees6_2 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+      employees6_2.forEach(function (employee6_2) {
+        let row6_2 = document.createElement("tr");
+        for (let key6_2 in employee6_2) {
+          let cell6_2 = document.createElement("td");
+          cell6_2.textContent = employee6_2[key6_2];
+          if (key6_2 === "age") {
+            cell6_2.addEventListener("click", function () {
+              let currentAge6_2 = parseInt(this.textContent);
+              this.textContent = currentAge6_2 + 1;
+            });
+          }
+          row6_2.appendChild(cell6_2);
+        }
+        table6_2.appendChild(row6_2);
+      });
+
+      // 6_3
+      let table6_3 = document.getElementById("table6_3");
+      let employees6_3 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+      employees6_3.forEach(function (employee6_3) {
+        let row6_3 = document.createElement("tr");
+        for (let key6_3 in employee6_3) {
+          let cell6_3 = document.createElement("td");
+          cell6_3.textContent = employee6_3[key6_3];
+          if (key6_3 === "salary") {
+            cell6_3.addEventListener("click", function () {
+              let currentSalary6_3 = parseFloat(this.textContent);
+              if (!isNaN(currentSalary6_3)) {
+                let newSalary6_3 = currentSalary6_3 * 1.1;
+                this.textContent = newSalary6_3.toFixed(2);
+              }
+            });
+          }
+          row6_3.appendChild(cell6_3);
+        }
+        table6_3.appendChild(row6_3);
+      });
+
+      // 7_1
+      function addRow() {
+        let tableBody7_1 = document.getElementById("tableBody7_1");
+        let newRow7_1 = document.createElement("tr");
+        for (let i = 0; i < 3; i++) {
+          let newCell7_1 = document.createElement("td");
+          newCell7_1.textContent = `Ячейка ${i + 1}`;
+          newRow7_1.appendChild(newCell7_1);
+        }
+        tableBody7_1.appendChild(newRow7_1);
+      }
+      let button7_1 = document.getElementById("button7_1");
+      button7_1.addEventListener("click", addRow);
+
+      // 7_2
+      let table7_2 = document.getElementById("table7_2");
+      let button7_2 = document.getElementById("button7_2");
+      button7_2.addEventListener("click", function () {
+        let newRow7_2 = document.createElement("tr");
+        for (let i = 0; i < table7_2.rows[0].cells.length; i++) {
+          let newCell7_2 = document.createElement("td");
+          newRow7_2.appendChild(newCell7_2);
+        }
+        table7_2.appendChild(newRow7_2);
+        for (let i = 0; i < table7_2.rows.length; i++) {
+          let newCell7_2 = document.createElement("td");
+          table7_2.rows[i].appendChild(newCell7_2);
+        }
+      });
+
+      // 8
+      let table8 = document.getElementById("table8");
+      let button8 = document.getElementById("button8");
+      button8.addEventListener("click", function () {
+        for (let i = 0; i < table8.rows.length; i++) {
+          for (let j = 0; j < table8.rows[i].cells.length; j++) {
+            let content8 = parseInt(table8.rows[i].cells[j].textContent);
+            if (!isNaN(content8)) {
+              table8.rows[i].cells[j].textContent = content8 * 2;
+            }
+          }
+        }
+      });
+
+      // 9
+      let parent9 = document.getElementById("parent9");
+      let button9 = document.getElementById("button9");
+      button9.addEventListener("click", function () {
+        let newListItem9 = document.createElement("li");
+        newListItem9.textContent = parent9.children.length + 1;
+        parent9.appendChild(newListItem9);
+        newListItem9.addEventListener("click", function () {
+          parent9.removeChild(newListItem9);
+        });
+      });
+      let existingListItems9 = parent9.querySelectorAll("li");
+      existingListItems9.forEach(function (item9) {
+        item9.addEventListener("click", function () {
+          parent9.removeChild(item9);
+        });
+      });
+
+      // 10
+      let elem10 = document.querySelector("#elem10");
+      let remove10 = document.querySelector("#remove10");
+      remove10.addEventListener("click", function (event) {
+        elem10.remove();
+        event.preventDefault();
+      });
+
+      // 11_1
+      let parentList11_1 = document.getElementById("parentList11_1");
+      let listItems11_1 = parentList11_1.getElementsByTagName("li");
+      for (let i = 0; i < listItems11_1.length; i++) {
+        let deleteLink11_1 = listItems11_1[i].querySelector(".deleteLink11_1");
+        deleteLink11_1.addEventListener("click", function (event) {
+          event.preventDefault();
+          parentList11_1.removeChild(listItems11_1[i]);
+        });
+      }
+
+      // 11_2
+      let table11_2 = document.getElementById("table11_2");
+      let deleteLinks11_2 = document.querySelectorAll(".deleteLink11_2");
+      deleteLinks11_2.forEach(function (deleteLink) {
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          let row11_2 = deleteLink.parentNode.parentNode;
+          row11_2.parentNode.removeChild(row11_2);
+        });
+      });
+
+      // 12_1
+      let elem12_1 = document.getElementById("elem12_1");
+      let listItems12_1 = elem12_1.getElementsByTagName("li");
+      for (let i = 0; i < listItems12_1.length; i++) {
+        listItems12_1[i].addEventListener("click", function () {
+          let input12_1 = document.createElement("input");
+          input12_1.type = "text";
+          input12_1.value = listItems12_1[i].textContent;
+          listItems12_1[i].textContent = "";
+          listItems12_1[i].appendChild(input12_1);
+          input12_1.focus();
+          input12_1.addEventListener("blur", function () {
+            listItems12_1[i].textContent = input12_1.value;
+          });
+        });
+      }
+
+      // 12_2
+      let table12_2 = document.getElementById("table12_2");
+      let tableCells12_2 = table12_2.getElementsByTagName("td");
+      for (let i = 0; i < tableCells12_2.length; i++) {
+        tableCells12_2[i].addEventListener("click", function () {
+          let input12_2 = document.createElement("input");
+          input12_2.type = "text";
+          input12_2.value = tableCells12_2[i].textContent.trim();
+          input12_2.style.width = tableCells12_2[i].offsetWidth + "px";
+          tableCells12_2[i].textContent = "";
+          tableCells12_2[i].appendChild(input12_2);
+          input12_2.focus();
+          input12_2.addEventListener("blur", function () {
+            tableCells12_2[i].textContent = input12_2.value;
+          });
+        });
+      }
+
+      // 13_1
+      let parent13_1 = document.getElementById("parent13_1");
+      let paragraphs13_1 = parent13_1.getElementsByTagName("p");
+      for (let i = 0; i < paragraphs13_1.length; i++) {
+        let spanElement13_1 = paragraphs13_1[i].getElementsByTagName("span")[0];
+        spanElement13_1.addEventListener("click", function () {
+          let input13_1 = document.createElement("input");
+          input13_1.type = "text";
+          input13_1.value = spanElement13_1.textContent.trim();
+          spanElement13_1.textContent = "";
+          spanElement13_1.appendChild(input13_1);
+          input13_1.focus();
+          input13_1.addEventListener("blur", function () {
+            spanElement13_1.textContent = input13_1.value;
+          });
+        });
+      }
+      let deleteLinks13_1 = document.querySelectorAll(".deleteLink13_1");
+      deleteLinks13_1.forEach(function (deleteLink) {
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          let paragraph13_1 = deleteLink.parentNode;
+          paragraph13_1.parentNode.removeChild(paragraph13_1);
+        });
+      });
+
+      // 13_2
+      let parent13_2 = document.getElementById("parent13_2");
+      let paragraphs13_2 = parent13_2.getElementsByTagName("p");
+      for (let i = 0; i < paragraphs13_2.length; i++) {
+        let spanElement13_2 = document.createElement("span");
+        let textNode = paragraphs13_2[i].firstChild;
+        paragraphs13_2[i].textContent = "";
+        spanElement13_2.textContent = textNode.nodeValue;
+        paragraphs13_2[i].appendChild(spanElement13_2);
+      }
+      let spanElements13_2 = parent13_2.getElementsByTagName("span");
+      for (let i = 0; i < spanElements13_2.length; i++) {
+        spanElements13_2[i].addEventListener("click", function () {
+          let input13_2 = document.createElement("input");
+          input13_2.type = "text";
+          input13_2.value = spanElements13_2[i].textContent.trim();
+          spanElements13_2[i].textContent = "";
+          spanElements13_2[i].appendChild(input13_2);
+          input13_2.focus();
+          input13_2.addEventListener("blur", function () {
+            spanElements13_2[i].textContent = input13_2.value;
+          });
+        });
+      }
+      for (let i = 0; i < paragraphs13_2.length; i++) {
+        let deleteLink13_2 = document.createElement("a");
+        deleteLink13_2.href = "#";
+        deleteLink13_2.textContent = "Удалить";
+        deleteLink13_2.classList.add("deleteLink");
+        paragraphs13_2[i].appendChild(deleteLink13_2);
+      }
+      let deleteLinks13_2 = document.querySelectorAll(".deleteLink13_2");
+      deleteLinks13_2.forEach(function (deleteLink) {
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          let paragraph13_2 = deleteLink.parentNode;
+          paragraph13_2.parentNode.removeChild(paragraph13_2);
+        });
+      });
+
+      // 14_1
+      let strikeLinks14_1 = document.querySelectorAll(".strikeLink14_1");
+      strikeLinks14_1.forEach(function (strikeLink) {
+        strikeLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          let paragraph14_1 = strikeLink.parentNode;
+          paragraph14_1.classList.toggle("strike-through");
+        });
+      });
+
+      // 14_2
+      let strikeLinks14_2 = document.querySelectorAll(".strikeLink14_2");
+      strikeLinks14_2.forEach(function (strikeLink) {
+        strikeLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          let paragraph14_2 = strikeLink.parentNode;
+          paragraph14_2.classList.add("strike-through");
+          strikeLink.remove();
+        });
+      });
+
+      // 15
+      let elem15 = document.querySelector("#elem15");
+      let toggle = document.querySelector("#toggle");
+      let isVisible = true;
+      show.addEventListener("click", function () {
+        elem15.classList.remove("hidden");
+        isVisible = true;
+      });
+
+      hide.addEventListener("click", function () {
+        elem15.classList.add("hidden");
+        isVisible = false;
+      });
+
+      // 16_1
+      let elem16_1 = document.getElementById("elem16_1");
+      elem16_1.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          event.target.classList.add("active");
+        }
+      });
+
+      // 16_2
+      let elem16_2 = document.getElementById("elem16_2");
+      elem16_2.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          event.target.classList.toggle("active");
+        }
+      });
+
+      // 17_1
+      let myArray17_1 = [
+        "Элемент 1",
+        "Элемент 2",
+        "Элемент 3",
+        "Элемент 4",
+        "Элемент 5",
+      ];
+      let elem17_1 = document.getElementById("elem17_1");
+      myArray17_1.forEach(function (item) {
+        let listItem17_1 = document.createElement("li");
+        listItem17_1.textContent = item;
+        elem17_1.appendChild(listItem17_1);
+      });
+
+      // 17_2
+      let elem17_2 = document.getElementById("elem17_2");
+      elem17_2.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          let input17_2 = document.createElement("input");
+          input17_2.type = "text";
+          input17_2.value = event.target.textContent;
+          input17_2.addEventListener("blur", function () {
+            event.target.textContent = input17_2.value;
+            input17_2.remove();
+          });
+          event.target.textContent = "";
+          event.target.appendChild(input17_2);
+          input17_2.focus();
+        }
+      });
+
+      // 17_3
+      let elem17_3 = document.getElementById("elem17_3");
+      let input17_3 = document.getElementById("input17_3");
+      let button17_3 = document.getElementById("button17_3");
+      button17_3.addEventListener("click", function () {
+        let newItemText17_3 = input17_3.value.trim();
+        if (newItemText17_3 !== "") {
+          let newItem17_3 = document.createElement("li");
+          newItem17_3.textContent = newItemText17_3;
+          elem17_3.appendChild(newItem17_3);
+          input17_3.value = "";
+          addEditHandler(newItem17_3);
+        }
+      });
+
+      function addEditHandler(element) {
+        element.addEventListener("click", function (event) {
+          if (event.target.tagName === "LI") {
+            let input17_30 = document.createElement("input");
+            input17_30.type = "text";
+            input17_30.value = event.target.textContent;
+            input17_30.addEventListener("blur", function () {
+              event.target.textContent = input17_30.value;
+              input17_30.remove();
+            });
+            event.target.textContent = "";
+            event.target.appendChild(input17_30);
+            input17_30.focus();
+          }
+        });
+      }
+
+      let listItems17_3 = elem17_3.getElementsByTagName("li");
+      for (let i = 0; i < listItems17_3.length; i++) {
+        addEditHandler(listItems17_3[i]);
+      }
+
+      // 17_4
+      let elem17_4 = document.getElementById("elem17_4");
+      let input17_4 = document.getElementById("input17_4");
+      let button17_4 = document.getElementById("button17_4");
+
+      button17_4.addEventListener("click", function () {
+        let newItemText17_4 = input17_4.value.trim();
+        if (newItemText17_4 !== "") {
+          let newItem17_4 = document.createElement("li");
+          newItem17_4.textContent = newItemText17_4;
+
+          let deleteLink17_4 = document.createElement("a");
+          deleteLink17_4.href = "#";
+          deleteLink17_4.textContent = "удалить";
+          deleteLink17_4.classList.add("deleteItem17_4");
+
+          newItem17_4.appendChild(deleteLink17_4);
+          elem17_4.appendChild(newItem17_4);
+
+          input17_4.value = "";
+          addEditHandler(newItem17_4);
+          addDeleteHandler(deleteLink17_4);
+        }
+      });
+
+      function addEditHandler(element) {
+        element.addEventListener("click", function (event) {
+          if (event.target.tagName === "LI") {
+            let input17_40 = document.createElement("input");
+            input17_40.type = "text";
+            input17_40.value = event.target.textContent;
+
+            input17_40.addEventListener("blur", function () {
+              event.target.textContent = input17_40.value;
+              input17_40.remove();
+            });
+
+            event.target.textContent = "";
+            event.target.appendChild(input17_40);
+            input17_40.focus();
+          }
+        });
+      }
+
+      function addDeleteHandler(deleteLink) {
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          deleteLink.parentNode.remove();
+        });
+      }
+
+      let listItems17_4 = elem17_4.querySelectorAll("li");
+      listItems17_4.forEach(function (listItem) {
+        addEditHandler(listItem);
+      });
+
+      let deleteLinks17_4 = document.querySelectorAll(".deleteItem17_4");
+      deleteLinks17_4.forEach(function (deleteLink) {
+        addDeleteHandler(deleteLink);
+      });
+
+      // 17_5
+      let elem17_5 = document.getElementById("elem17_5");
+      let input17_5 = document.getElementById("input17_5");
+      let button17_5 = document.getElementById("button17_5");
+
+      button17_5.addEventListener("click", function () {
+        let newItemText17_5 = input17_5.value.trim();
+        if (newItemText17_5 !== "") {
+          let newItem17_5 = document.createElement("li");
+          newItem17_5.textContent = newItemText17_5;
+
+          let deleteLink17_5 = document.createElement("a");
+          deleteLink17_5.href = "#";
+          deleteLink17_5.textContent = "удалить";
+          deleteLink17_5.classList.add("deleteItem17_5");
+
+          let strikeLink17_5 = document.createElement("a");
+          strikeLink17_5.href = "#";
+          strikeLink17_5.textContent = "перечеркнуть";
+          strikeLink17_5.classList.add("strikeItem17_5");
+
+          newItem17_5.appendChild(deleteLink17_5);
+          newItem17_5.appendChild(strikeLink17_5);
+          elem17_5.appendChild(newItem17_5);
+
+          input17_5.value = "";
+          addEditHandler(newItem17_5);
+          addDeleteHandler(deleteLink17_5);
+          addStrikeHandler(strikeLink17_5);
+        }
+      });
+
+      function addEditHandler(element) {
+        element.addEventListener("click", function (event) {
+          if (event.target.tagName === "LI") {
+            let input17_50 = document.createElement("input");
+            input17_50.type = "text";
+            input17_50.value = event.target.textContent;
+
+            input17_50.addEventListener("blur", function () {
+              event.target.textContent = input17_50.value;
+              input17_50.remove();
+            });
+
+            event.target.textContent = "";
+            event.target.appendChild(input17_50);
+            input17_50.focus();
+          }
+        });
+      }
+
+      function addDeleteHandler(deleteLink) {
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          deleteLink.parentNode.remove();
+        });
+      }
+
+      function addStrikeHandler(strikeLink) {
+        strikeLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          let listItem = strikeLink.parentNode;
+          listItem.classList.toggle("strike-through");
+        });
+      }
+
+      let listItems17_5 = elem17_5.querySelectorAll("li");
+      listItems17_5.forEach(function (listItem) {
+        addEditHandler(listItem);
+      });
+
+      let deleteLinks17_5 = document.querySelectorAll(".deleteItem17_5");
+      deleteLinks17_5.forEach(function (deleteLink) {
+        addDeleteHandler(deleteLink);
+      });
+
+      let strikeLinks17_5 = document.querySelectorAll(".strikeItem17_5");
+      strikeLinks17_5.forEach(function (strikeLink) {
+        addStrikeHandler(strikeLink);
+      });
+
+      // 17_6
+      let employees = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+      let employeesBody = document.getElementById("employeesBody");
+      employees.forEach(function (employee) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${employee.name}</td>
+      <td>${employee.age}</td>
+      <td>${employee.salary}</td>
+    `;
+        employeesBody.appendChild(row);
+      });
+
+      // 17_7
+      let employees2 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+      let employeesBody2 = document.getElementById("employeesBody2");
+      employees2.forEach(function (employee) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${employee.name}</td>
+      <td>${employee.age}</td>
+      <td>${employee.salary}</td>`;
+        employeesBody2.appendChild(row);
+        let cells = row.querySelectorAll("td");
+        cells.forEach(function (cell) {
+          cell.addEventListener("dblclick", function () {
+            let input = document.createElement("input");
+            input.value = cell.textContent;
+            cell.textContent = "";
+            cell.appendChild(input);
+            input.focus();
+            input.addEventListener("blur", function () {
+              cell.textContent = input.value;
+            });
+          });
+        });
+      });
+
+      // 17_8
+      let employees3 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+      let employeesBody3 = document.getElementById("employeesBody3");
+      employees3.forEach(function (employee) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${employee.name}</td>
+      <td>${employee.age}</td>
+      <td>${employee.salary}</td>
+      <td><a href="#" class="deleteRow">Delete</a></td>`;
+        employeesBody3.appendChild(row);
+        let cells = row.querySelectorAll("td");
+        cells.forEach(function (cell) {
+          cell.addEventListener("dblclick", function () {
+            let input = document.createElement("input");
+            input.value = cell.textContent;
+            cell.textContent = "";
+            cell.appendChild(input);
+            input.focus();
+            input.addEventListener("blur", function () {
+              cell.textContent = input.value;
+            });
+          });
+        });
+        let deleteLink = row.querySelector(".deleteRow");
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          row.remove();
+        });
+      });
+
+      // 17_9
+      let employees4 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+
+      let employeesBody4 = document.getElementById("employeesBody4");
+
+      function createRow(employee) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${employee.name}</td>
+      <td>${employee.age}</td>
+      <td>${employee.salary}</td>
+      <td><a href="#" class="deleteRow">Delete</a></td>
+    `;
+        employeesBody4.appendChild(row);
+
+        let cells = row.querySelectorAll("td");
+        cells.forEach(function (cell) {
+          cell.addEventListener("dblclick", function () {
+            let input = document.createElement("input");
+            input.value = cell.textContent;
+            cell.textContent = "";
+            cell.appendChild(input);
+            input.focus();
+
+            input.addEventListener("blur", function () {
+              cell.textContent = input.value;
+            });
+          });
+        });
+
+        let deleteLink = row.querySelector(".deleteRow");
+        deleteLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          row.remove();
+        });
+      }
+
+      function addEmployee() {
+        let name = document.getElementById("nameInput").value.trim();
+        let age = document.getElementById("ageInput").value.trim();
+        let salary = document.getElementById("salaryInput").value.trim();
+
+        if (name && age && salary) {
+          let newEmployee = { name: name, age: age, salary: salary };
+          createRow(newEmployee);
+          document.getElementById("nameInput").value = "";
+          document.getElementById("ageInput").value = "";
+          document.getElementById("salaryInput").value = "";
+        } else {
+          alert("Пожалуйста, заполните все поля");
+        }
+      }
+
+      document
+        .getElementById("addEmployeeButton")
+        .addEventListener("click", addEmployee);
+      employees4.forEach(function (employee) {
+        createRow(employee);
+      });
+
+      // 17_10
+      let employees10 = [
+        { name: "employee1", age: 30, salary: 400 },
+        { name: "employee2", age: 31, salary: 500 },
+        { name: "employee3", age: 32, salary: 600 },
+      ];
+
+      let ulElement10 = document.createElement("ul");
+      employees10.forEach((employee) => {
+        let liElement10 = document.createElement("li");
+        liElement10.textContent = `Name: ${employee.name}, Age: ${employee.age}, Salary: ${employee.salary}`;
+        ulElement10.appendChild(liElement10);
+      });
+      document.body.appendChild(ulElement10);     
+    </script>
+  </body>
+</html>
