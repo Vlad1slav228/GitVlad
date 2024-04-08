@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контекст</title>
+  </head>
+  <body>
+    <h1>Контекст через переменную в JavaScript</h1>
+    <h5>
+      1 - Автор кода хотел, чтобы по потери фокуса на экран вывелся квадрат
+      числа из value инпута. Однако, почему-то при потери фокуса в консоль
+      выдается ошибка. Исправьте ошибку автора кода. Напишите текст, в котором
+      вы дадите объяснение автору кода, почему возникла его ошибка.
+    </h5>
+    <input id="elem1" value="3" />
+    <br />
+    <h1>Контекст через стрелочную функцию в JavaScript</h1>
+    <h5>
+      2 - Возьмите код из предыдущей задачи и исправьте проблему кода с помощью
+      изученного способа.
+    </h5>
+    <input id="elem2" value="3" />
+    <br />
+    <h1>Привязывание контекста через метод call в JavaScript</h1>
+    <h5>
+      3 - С помощью метода call и функции func выведите на экран value каждого
+      из инпутов.
+    </h5>
+    <input id="elem3_1" value="text1" />
+    <input id="elem3_2" value="text2" />
+    <input id="elem3_3" value="text3" />
+    <br />
+    <h1>Метод call с параметрами в JavaScript</h1>
+    <h5>
+      4 - Добавьте в последнюю строчку метод call так, чтобы на экран вывелось
+      'hello, John Smit'. Слово 'hello' должно взяться из value инпута, а 'John'
+      и 'Smit' должны быть параметрами функциями.
+    </h5>
+    <input id="elem4" value="hello" />
+    <br />
+    <h1>Привязывание контекста через метод apply в JavaScript</h1>
+    <h5>
+      5 - Добавьте в последнюю строчку метод apply так, чтобы на экран вывелось
+      'hello, John Smit'. Слово 'hello' должно взяться из value инпута, а 'John'
+      и 'Smit' должны быть параметрами функциями.
+    </h5>
+    <input id="elem5" value="hello" />
+    <br />
+    <h1>Привязывание контекста через метод bind в JavaScript</h1>
+    <h5>
+      6 - Напишите в указанном месте конструкцию с методом bind так, чтобы this
+      внутри функции func всегда указывал на инпут из переменной elem.
+    </h5>
+    <input id="elem6" value="привет" />
+    <script>
+      // 1
+      "use strict";
+      let elem1 = document.querySelector("#elem1");
+      elem1.addEventListener("blur", func1);
+      function func1() {
+        let self = this;
+        alert(square1(self));
+
+        function square1() {
+          return self.value * self.value;
+        }
+      }
+
+      // 2
+      let elem2 = document.querySelector("#elem2");
+      function func2() {
+        let self2 = this;
+        alert(square2(self2));
+        function square2() {
+          return self2.value * self2.value;
+        }
+      }
+      elem2.addEventListener("blur", func2);
+
+      // 3
+      function func3() {
+        console.log(this.value);
+      }
+      let elem3_1 = document.querySelector("#elem3_1");
+      let elem3_2 = document.querySelector("#elem3_2");
+      let elem3_3 = document.querySelector("#elem3_3");
+      func3.call(elem3_1);
+      func3.call(elem3_2);
+      func3.call(elem3_3);
+
+      // 4
+      let elem4 = document.getElementById("elem4");
+      function func4(surname, name) {
+        console.log(this.value + ", " + name + " " + surname);
+      }
+      func4.call(elem4, "Smit", "John");
+
+      // 5
+      let elem5 = document.querySelector("#elem5");
+      function func(surname, name) {
+        console.log(this.value + ", " + surname + " " + name);
+      }
+      func.apply(elem5, ["John", "Smit"]);
+
+      // 6
+      let elem6 = document.getElementById("elem6");
+      function func(name, surname) {
+        console.log(this.value + ", " + name + " " + surname);
+      }
+      let bindFunc = func.bind(elem6);
+      bindFunc("John", "Smit"); 
+      bindFunc("Eric", "Luis"); 
+    </script>
+  </body>
+</html>
