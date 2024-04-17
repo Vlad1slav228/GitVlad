@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таймеры</title>
+  </head>
+  <body>
+    <h1>Основы работы с функцией setInterval в JavaScript</h1>
+    <h5>
+      №1 - Запустите таймер, который каждые 3 секунды будет что-нибудь выводить
+      в консоль.
+    </h5>
+    <p>Смотреть консоль</p>
+    <br />
+    <h1>Счетчик через функцию setInterval в JavaScript</h1>
+    <h5>
+      №2 - Пусть дана переменная, в которой изначально хранится число 100.
+      Запустите таймер, который каждую секунду будет уменьшать значение этой
+      переменной на 1 и выводить это значение в консоль.
+    </h5>
+    <p>Смотреть консоль</p>
+    <br />
+    <h1>Остановка таймера JavaScript</h1>
+    <h5>
+      №3 - Пусть дана переменная, в которой изначально хранится число 10.
+      Запустите таймер, который каждую секунду будет уменьшать значение этой
+      переменной на 1 и выводить это значение в консоль. Как только значение
+      переменной достигнет нуля - остановите таймер.
+    </h5>
+    <p>Смотреть консоль</p>
+    <br />
+    <h1>Кнопка для запуска таймера на JavaScript</h1>
+    <h5>
+      №4 - Сделайте кнопку, по нажатию на которую в консоль будет выводится
+      обратный отсчет, начиная с 100.
+    </h5>
+    <button id="button4">Нажать</button>
+    <br />
+    <h1>Многократное нажатие на кнопку для запуска таймера на JavaScript</h1>
+    <h5>
+      №5 - Возьмите ваше решение предыдущей задачи. Проверьте, что многократное
+      нажатие на кнопку приводит к ускорению отсчета. Исправьте эту проблему.
+    </h5>
+    <button id="button5">Нажать</button>
+    <br />
+    <h1>Кнопки для запуска и остановки таймера на JavaScript</h1>
+    <h5>
+      №6_1 - Пусть дана переменная, в которой изначально хранится число 100.
+      Даны также две кнопки. По нажатию на первую кнопку запустите таймер,
+      который каждую секунду будет уменьшать значение переменной на 1 и выводить
+      новое значение в консоль. Как только значение переменной достигнет нуля -
+      остановите таймер. По нажатию на вторую кнопку остановите таймер. Также
+      остановите таймер, если вторая кнопка не была нажата, но значение
+      переменной достигло нуля.
+    </h5>
+    <button id="start6_1">Старт</button>
+    <button id="stop6_1">Остановить</button>
+    <br />
+    <h5>
+      №6_2 - Некоторый программист написал код, который по нажатию на кнопку
+      запускает таймер, выводящий в консоль текущий момент времени. После
+      запуска кода, однако, оказалось, что кнопка остановки не работает.
+      Исправьте ошибку автора кода.
+    </h5>
+    <input type="submit" id="start6_2" value="start" />
+    <input type="submit" id="stop6_2" value="stop" />
+    <br />
+    <h5>
+      №6_3 - Еще один программист также написал код для решения предыдущей
+      задачи. После запуска кода, однако, опять оказалось, что кнопка остановки
+      не работает. Исправьте ошибку автора кода.
+    </h5>
+    <input type="submit" id="start6_3" value="start" />
+    <input type="submit" id="stop6_3" value="stop" />
+    <br />
+    <h5>
+      №6_4 - Еще один программист также написал код для решения предыдущей
+      задачи. После запуска кода, однако, опять оказалось, что кнопка остановки
+      не работает. Исправьте ошибку автора кода.
+    </h5>
+    <input type="submit" id="start6_4" value="start" />
+    <input type="submit" id="stop6_4" value="stop" />
+    <br />
+    <h5>
+      №6_5 - Еще один программист также написал код для решения предыдущей
+      задачи. После запуска кода, однако, опять оказалось, что кнопка остановки
+      не работает. Исправьте ошибку автора кода.
+    </h5>
+    <input type="submit" id="start6_5" value="start" />
+    <input type="submit" id="stop6_5" value="stop" />
+    <br />
+    <h1>Практика на таймеры и работу с DOM в JavaScript</h1>
+    <h5>
+      №7_1 - Пусть в инпуте в атрибуте value изначально записано число 10.
+      Запустите таймер, который каждую секунду будет уменьшать это число на
+      единицу.
+    </h5>
+    <input id="elem7_1" value="10" />
+    <br />
+    <h5>
+      №7_2 - Модифицируйте предыдущую задачу так, чтобы, как только содержимое
+      инпута станет равно нулю, таймер прекратил свою работу.
+    </h5>
+    <input id="elem7_2" value="10" />
+    <br />
+    <h1>Таймеры и потеря контекста в JavaScript</h1>
+    <h5>
+      №8 - Автор кода хотел, чтобы по нажатию на кнопку, значение этой кнопки
+      каждую секунду увеличивалось на 1. Однако, по нажатию на кнопку вообще
+      ничего не происходит. Исправьте ошибку автора кода. Напишите текст, в
+      котором вы дадите объяснение автору кода, почему возникла его ошибка.
+    </h5>
+    <input type="button" id="elem8" value="1" />
+    <br />
+    <h1>Практика на таймеры и работу с DOM в JavaScript</h1>
+    <h5>
+      №9_1 - Дана кнопка. Дан абзац, текстом которого является число. По нажатию
+      на кнопку запустите таймер, который каждую секунду будет увеличивать текст
+      абзаца на 1.
+    </h5>
+    <p id="elem9_1">0</p>
+    <button id="button9_1">Нажать</button>
+    <br />
+    <h5>
+      №9_2 - Дана кнопка. Дан абзац, текстом которого является число, например,
+      10. По нажатию на кнопку запустите таймер, который каждую секунду будет
+      уменьшать текст абзаца на 1. Как только значение абзаца станет равно нулю
+      - остановите таймер.
+    </h5>
+    <p id="elem9_2">10</p>
+    <button id="button9_2">Нажать</button>
+    <br />
+    <h5>
+      №9_3 - Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем
+      появлялся квадрат того числа, которое в нем записано.
+    </h5>
+    <input type="text" id="input9_3" value="2" />
+    <br />
+    <h5>
+      №9_4 - Дан инпут. В него вводится число. По потери фокуса сделайте так,
+      чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного
+      числа. Когда отсчет дойдет до нуля - он должен закончится.
+    </h5>
+    <input type="text" id="input9_4" />
+    <p id="elem9_4"></p>
+    <br />
+    <h5>
+      №9_5 - Дан инпут, кнопка и абзац. В инпут вводится какое-то число. По
+      нажатию на кнопку запишите введенное число в текст абзаца и запустите
+      обратный отсчет в абзаце: пусть каждую секунду число в абзаце уменьшается
+      на единицу, пока не дойдет до нуля.
+    </h5>
+    <input type="text" id="input9_5" />
+    <p id="elem9_5"></p>
+    <button id="button9_5">Нажать</button>
+    <br />
+    <h5>
+      №9_6 - Дан абзац и две кнопки. Сделайте так, чтобы по нажатию на первую
+      кнопку в абзаце начал тикать таймер от 1 до бесконечности, а по нажатию на
+      вторую таймер останавливался.
+    </h5>
+    <p id="elem9_6"></p>
+    <button id="button9_61">Старт</button>
+    <button id="button9_62">Стоп</button>
+    <br />
+    <h5>
+      №9_7 - Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с
+      красного на зеленый и наоборот.
+    </h5>
+    <p id="elem9_7">JavaScript</p>
+    <br />
+    <h5>
+      №9_8 - Если выводить на экран каждую секунду текущий момент времени, то
+      можно сделать тикающие часы. Реализуйте такие же часики, как показано ниже
+      в образце:
+    </h5>
+    <p id="elem9_8"></p>
+    <br />
+    <h1>Задержка перед выполнением в JavaScript</h1>
+    <h5>
+      №10 - Дан абзац. Напишите код, который выведет сообщение в этот абзац
+      через 10 секунд после загрузки страницы.
+    </h5>
+    <p id="elem10"></p>
+    <br />
+    <h1>Запуск таймера в JavaScript</h1>
+    <h5>
+      №11 - Выведите в консоль число 0. Через секунду выведите число 1, через
+      две секунды выведите число 2, через 3 секунды выведите число 3. И так
+      далее до бесконечности.
+    </h5>
+    <script>
+      // 1
+      function timer1() {
+        console.log("Привет! Это JavaScript");
+      }
+      setInterval(timer1, 3000);
+
+      // 2
+      let i2 = 100;
+      setInterval(() => console.log(i2--), 1000);
+
+      // 3
+      let i3 = 10;
+      let timerID3 = setInterval(function () {
+        console.log(i3--);
+        if (i3 == 0) {
+          clearInterval(timerID3);
+        }
+      }, 1000);
+
+      // 4
+      let button4 = document.getElementById("button4");
+      button4.addEventListener("click", function () {
+        let i4 = 100;
+        setInterval(() => console.log(i4--), 1000);
+      });
+
+      // 5
+      let button5 = document.getElementById("button5");
+      function func5() {
+        let i5 = 100;
+        setInterval(() => console.log(i5--), 1000);
+        button5.removeEventListener("click", func5);
+      }
+      button5.addEventListener("click", func5);
+
+      // 6_1
+      let start6_1 = document.getElementById("start6_1");
+      let stop6_1 = document.getElementById("stop6_1");
+      let i6_1 = 100;
+      let timerID6_1;
+      function startTimer6_1() {
+        timerID6_1 = setInterval(function () {
+          console.log(i6_1--);
+          if (i6_1 === 0) {
+            clearInterval(timerID6_1);
+          }
+        }, 1000);
+      }
+
+      function stopTimer6_1() {
+        clearInterval(timerID6_1);
+      }
+
+      start6_1.addEventListener("click", startTimer6_1);
+      stop6_1.addEventListener("click", stopTimer6_1);
+
+      // 6_2
+      let start6_2 = document.querySelector("#start6_2");
+      let stop6_2 = document.querySelector("#stop6_2");
+      let timerId6_2;
+      start6_2.addEventListener("click", function () {
+        timerId6_2 = setInterval(function () {
+          let date6_2 = new Date();
+          console.log(date6_2.getMinutes() + " " + date6_2.getSeconds());
+        }, 1000);
+      });
+
+      stop6_2.addEventListener("click", function () {
+        clearInterval(timerId6_2);
+      });
+
+      // 6_3
+      let start6_3 = document.querySelector("#start6_3");
+      let stop6_3 = document.querySelector("#stop6_3");
+      let timerId6_3;
+      start6_3.addEventListener("click", function () {
+        timerId6_3 = setInterval(function () {
+          let date6_3 = new Date();
+          console.log(date6_3.getMinutes() + " " + date6_3.getSeconds());
+        }, 1000);
+      });
+
+      stop6_3.addEventListener("click", function () {
+        clearInterval(timerId6_3);
+      });
+
+      // 6_4
+      let start6_4 = document.querySelector("#start6_4");
+      let stop6_4 = document.querySelector("#stop6_4");
+      let timerId6_4;
+      start6_4.addEventListener("click", function () {
+        timerId6_4 = setInterval(function () {
+          let date6_4 = new Date();
+          console.log(date6_4.getMinutes() + " " + date6_4.getSeconds());
+        }, 1000);
+      });
+
+      stop6_4.addEventListener("click", function () {
+        clearInterval(timerId6_4);
+      });
+
+      // 6_5
+      let start6_5 = document.querySelector("#start6_5");
+      let stop6_5 = document.querySelector("#stop6_5");
+      let timerId6_5;
+      start6_5.addEventListener("click", function () {
+        timerId6_5 = setInterval(function () {
+          let date6_5 = new Date();
+          console.log(date6_5.getMinutes() + " " + date6_5.getSeconds());
+        }, 1000);
+      });
+
+      stop6_5.addEventListener("click", function () {
+        clearInterval(timerId6_5);
+      });
+
+      // 7_1
+      let elem7_1 = document.getElementById("elem7_1");
+      setInterval(function () {
+        elem7_1.value = +elem7_1.value - 1;
+      }, 1000);
+
+      // 7_2
+      let elem7_2 = document.getElementById("elem7_2");
+      let timerID7_2 = setInterval(function () {
+        elem7_2.value = +elem7_2.value - 1;
+        if (elem7_2.value == 0) {
+          clearInterval(timerID7_2);
+        }
+      }, 1000);
+
+      // 8
+      let elem8 = document.querySelector("#elem8");
+      elem8.addEventListener("click", function () {
+        setInterval(function () {
+          elem8.value = Number(elem8.value) + 1;
+        }, 1000);
+      });
+
+      // 9_1
+      let button9_1 = document.getElementById("button9_1");
+      let elem9_1 = document.getElementById("elem9_1");
+      button9_1.addEventListener("click", function () {
+        let value9_1 = +elem9_1.textContent;
+        let timer9_1 = setInterval(function () {
+          value9_1++;
+          elem9_1.textContent = value9_1;
+        }, 1000);
+      });
+
+      // 9_2
+      let button9_2 = document.getElementById("button9_2");
+      let elem9_2 = document.getElementById("elem9_2");
+      button9_2.addEventListener("click", function () {
+        let i9_2 = +elem9_2.textContent;
+        let timer9_2 = setInterval(function () {
+          i9_2--;
+          elem9_2.textContent = i9_2;
+          if (i9_2 === 0) {
+            clearInterval(timer9_2);
+          }
+        }, 1000);
+      });
+
+      // 9_3
+      let input9_3 = document.getElementById("input9_3");
+      input9_3.addEventListener("mouseover", function () {
+        let i9_3 = +input9_3.value;
+        let timer9_3 = setInterval(function () {
+          i9_3 = i9_3 * i9_3;
+          input9_3.value = i9_3;
+        }, 1000);
+      });
+
+      // 9_4
+      let input9_4 = document.getElementById("input9_4");
+      let elem9_4 = document.getElementById("elem9_4");
+      input9_4.addEventListener("blur", function () {
+        let i9_4 = +input9_4.value;
+        let timer9_4 = setInterval(function () {
+          i9_4--;
+          elem9_4.textContent = i9_4;
+          input9_4.value = "";
+          if (elem9_4.textContent == 0) {
+            clearInterval(timer9_4);
+          }
+        }, 1000);
+      });
+
+      // 9_5
+      let input9_5 = document.getElementById("input9_5");
+      let elem9_5 = document.getElementById("elem9_5");
+      let button9_5 = document.getElementById("button9_5");
+      button9_5.addEventListener("click", function () {
+        let i9_5 = +input9_5.value;
+        let timer9_5 = setInterval(function () {
+          i9_5--;
+          elem9_5.textContent = i9_5;
+          input9_5.value = "";
+          if (elem9_5.textContent == 0) {
+            clearInterval(timer9_5);
+          }
+        }, 1000);
+      });
+
+      // 9_6
+      let button9_61 = document.getElementById("button9_61");
+      let button9_62 = document.getElementById("button9_62");
+      let elem9_6 = document.getElementById("elem9_6");
+      let timer9_6;
+      button9_61.addEventListener("click", function () {
+        let i9_6 = +elem9_6.textContent;
+        timer9_6 = setInterval(function () {
+          i9_6++;
+          elem9_6.textContent = i9_6;
+        }, 1000);
+      });
+
+      button9_62.addEventListener("click", function () {
+        clearInterval(timer9_6);
+      });
+
+      // 9_7
+      let elem9_7 = document.getElementById("elem9_7");
+      setInterval(changeColor, 1000);
+      function changeColor() {
+        let currentColor = elem9_7.style.color;
+        if (currentColor === "red") {
+          elem9_7.style.color = "green";
+        } else {
+          elem9_7.style.color = "red";
+        }
+      }
+
+      // 9_8
+      let elem9_8 = document.getElementById("elem9_8");
+      setInterval(function () {
+        let date = new Date();
+        elem9_8.textContent =
+          date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        if (date.getSeconds() <= 9) {
+          elem9_8.textContent =
+            date.getHours() +
+            ":" +
+            date.getMinutes() +
+            ":" +
+            0 +
+            date.getSeconds();
+        }
+      }, 1000);
+
+      // 10
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          let elem10 = document.getElementById("elem10");
+          elem10.textContent = "Прошло 10 секунд!";
+        }, 10000);
+      });
+
+      // 11
+      function printNumbers(num) {
+        console.log(num);
+        setTimeout(function () {
+          printNumbers(num + 1);
+        }, num * 1000);
+      }
+      printNumbers(0);
+    </script>
+  </body>
+</html>
