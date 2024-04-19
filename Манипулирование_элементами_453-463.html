@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Манипулирование элементами</title>
+  </head>
+  <body>
+    <h1>Создание и вставка элементов на JavaScript</h1>
+    <h5>№1_1 - Дан ol. Вставьте ему в конец li с текстом 'item'.</h5>
+    <ol id="elem1_1"></ol>
+    <br />
+    <h5>
+      №1_2 - Дан ol и кнопка. Сделайте так, чтобы по клику на кнопку в конец
+      списка добавлялся li с текстом 'item'.
+    </h5>
+    <ol id="elem1_2"></ol>
+    <button id="button1_2">click me</button>
+    <br />
+    <h1>Привязывание событий при вставке элементов</h1>
+    <h5>
+      №2 - Дан ol и кнопка. Сделайте так, чтобы по клику на кнопку в конец ol
+      добавлялся тег li. Сделайте так, чтобы по клику на любой из добавленных li
+      в конец его текста записывался восклицательный знак.
+    </h5>
+    <ol id="elem2"></ol>
+    <button id="button2">click me</button>
+    <br />
+    <h1>Создание элементов в цикле на JavaScript</h1>
+    <h5>
+      №3 - Дан пустой ul. Запустите цикл, который вставит в него 10 тегов li.
+      Сделайте так, чтобы текстом каждой li был ее порядковый номер.
+    </h5>
+    <ul id="elem3"></ul>
+    <br />
+    <h1>Навешивание обработчиков в цикле на JavaScript</h1>
+    <h5>
+      №4 - Дан див. Запустите цикл, который добавит в наш див 5 инпутов. Пусть
+      дан также абзац. Сделайте так, чтобы каждый из новых инпутов по потери
+      фокуса записывал свой текст в абзац.
+    </h5>
+    <div id="div4"></div>
+    <p id="paragraph4"></p>
+    <br />
+    <h1>Удаление элементов на JavaScript</h1>
+    <h5>№5_1 - Сделайте так, чтобы любая li удалялась по клику на нее.</h5>
+    <ul>
+      <li class="li5_1">1</li>
+      <li class="li5_1">2</li>
+      <li class="li5_1">3</li>
+    </ul>
+    <br />
+    <h5>
+      №5_2 - Сделайте так, чтобы по каждому клику на кнопку удалялся последний
+      элемент из #parent.
+    </h5>
+    <ul id="parent5_2">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <input type="submit" id="button5_2" />
+    <br />
+    <h1>Вставка элементов в начало или в конец на JavaScript</h1>
+    <h5>
+      №6 - Вставьте ему в начало элемент с текстом 'start', а в конец - элемент
+      с текстом 'finish'.
+    </h5>
+    <ul id="elem6">
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h1>Вставка элементов перед элементами на JavaScript</h1>
+    <h5>№7_1 - Вставьте перед этим элементом элемент с текстом 'new'.</h5>
+    <ul id="parent7_1">
+      <li>text</li>
+      <li>text</li>
+      <li id="elem7_1">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h5>
+      №7_2 - Модифицируйте предыдущую задачу так, чтобы клик на вставленный
+      элемент приводил к тому, что в конец его текста будет добавляться '!'.
+    </h5>
+    <ul id="parent7_2">
+      <li>text</li>
+      <li>text</li>
+      <li id="elem7_2">text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <br />
+    <h1>Смежная вставка элементов на JavaScript</h1>
+    <h5>№8_1 - Дан элемент. Вставьте перед ним абзац с текстом '!!!'.</h5>
+    <div id="elem8_1" style="border: 1px solid red">
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+    </div>
+    <br />
+    <h5>№8_2 - Дан элемент. Вставьте после него абзац с текстом '!!!'.</h5>
+    <div id="elem8_2" style="border: 1px solid red">
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+    </div>
+    <br />
+    <h5>№8_3 - Дан элемент. Вставьте ему в начало абзац с текстом '!!!'.</h5>
+    <div id="elem8_3" style="border: 1px solid red">
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+    </div>
+    <br />
+    <h5>№8_4 - Дан элемент. Вставьте ему в конец абзац с текстом '!!!'.</h5>
+    <div id="elem8_4" style="border: 1px solid red">
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+    </div>
+    <br />
+    <h1>Смежная вставка тегов на JavaScript</h1>
+    <h5>№9 - Дан элемент. Вставьте перед ним следующий тег</h5>
+    <div id="elem9" style="border: 1px solid red">
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+    </div>
+    <br />
+    <h1>Клонирование элементов на JavaScript</h1>
+    <h5>
+      №10 - Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.
+    </h5>
+    <input type="text" id="input10" />
+    <button id="button10">Клонировать</button>
+    <br />
+    <h1>Проверка элементов в JavaScript</h1>
+    <h5>
+      №11_1 - Проверьте, является ли этот элемент элементом с классом www.
+    </h5>
+    <div id="elem11_1" class="www"></div>
+    <br />
+    <h5>№11_2 - Дан элемент. Проверьте, является ли этот элемент абзацем.</h5>
+    <div id="elem11_2"></div>
+    <br />
+    <h5>
+      №11_3 - Даны две переменные elem1 и elem2, содержащие два элемента:
+      Проверьте, является ли элемент из elem2 потомком элемента из elem1.
+    </h5>
+    <div id="elem1-11_3">
+      <p id="elem2-11_3"></p>
+    </div>
+    <script>
+      // 1_1
+      let elem1_1 = document.getElementById("elem1_1");
+      let li1_1 = document.createElement("li");
+      li1_1.textContent = "item";
+      elem1_1.appendChild(li1_1);
+
+      // 1_2
+      let elem1_2 = document.getElementById("elem1_2");
+      let button1_2 = document.getElementById("button1_2");
+      button1_2.addEventListener("click", function () {
+        let li1_2 = document.createElement("li");
+        li1_2.textContent = "item";
+        elem1_2.appendChild(li1_2);
+      });
+
+      // 2
+      let elem2 = document.getElementById("elem2");
+      let button2 = document.getElementById("button2");
+      button2.addEventListener("click", function () {
+        let li2 = document.createElement("li");
+        li2.textContent = "item";
+        elem2.appendChild(li2);
+
+        li2.addEventListener("click", function () {
+          li2.textContent += "!";
+        });
+      });
+
+      // 3
+      let elem3 = document.getElementById("elem3");
+      for (let i3 = 0; i3 <= 9; i3++) {
+        let li3 = document.createElement("li");
+        li3.textContent = li3.textContent + "(" + (i3 + 1) + ")";
+
+        elem3.appendChild(li3);
+      }
+
+      // 4
+      let div4 = document.getElementById("div4");
+      let paragraph4 = document.getElementById("paragraph4");
+      for (let i4 = 0; i4 <= 4; i4++) {
+        let input4 = document.createElement("input");
+        div4.appendChild(input4);
+
+        input4.addEventListener("blur", function () {
+          paragraph4.textContent = input4.value;
+        });
+      }
+
+      // 5_1
+      let li5_1 = document.querySelectorAll(".li5_1");
+      for (let elem5_1 of li5_1) {
+        elem5_1.addEventListener("click", function () {
+          elem5_1.remove();
+        });
+      }
+
+      // 5_2
+      let parent5_2 = document.getElementById("parent5_2");
+      let button5_2 = document.getElementById("button5_2");
+      button5_2.addEventListener("click", function () {
+        parent5_2.lastElementChild.remove();
+      });
+
+      // 6
+      let elem6 = document.getElementById("elem6");
+      let start6 = document.createElement("li");
+      let finish6 = document.createElement("li");
+      start6.textContent = "start";
+      finish6.textContent = "finish";
+      elem6.prepend(start6);
+      elem6.append(finish6);
+
+      // 7_1
+      let elem7_1 = document.getElementById("elem7_1");
+      let parent7_1 = document.getElementById("parent7_1");
+      let new7_1 = document.createElement("li");
+      new7_1.textContent = "new";
+      parent7_1.insertBefore(new7_1, elem7_1);
+
+      // 7_2
+      let elem7_2 = document.getElementById("elem7_2");
+      let parent7_2 = document.getElementById("parent7_2");
+      let new7_2 = document.createElement("li");
+      new7_2.textContent = "new";
+      new7_2.addEventListener("click", function () {
+        new7_2.textContent += "!";
+      });
+      parent7_2.insertBefore(new7_2, elem7_2);
+
+      // 8_1
+      let elem8_1 = document.getElementById("elem8_1");
+      let p8_1 = document.createElement("p");
+      p8_1.textContent = "!!!";
+      elem8_1.insertAdjacentElement("beforeBegin", p8_1);
+
+      // 8_2
+      let elem8_2 = document.getElementById("elem8_2");
+      let p8_2 = document.createElement("p");
+      p8_2.textContent = "!!!";
+      elem8_2.insertAdjacentElement("afterEnd", p8_2);
+
+      // 8_3
+      let elem8_3 = document.getElementById("elem8_3");
+      let p8_3 = document.createElement("p");
+      p8_3.textContent = "!!!";
+      elem8_3.insertAdjacentElement("afterBegin", p8_3);
+
+      // 8_4
+      let elem8_4 = document.getElementById("elem8_4");
+      let p8_4 = document.createElement("p");
+      p8_4.textContent = "!!!";
+      elem8_4.insertAdjacentElement("beforeEnd", p8_4);
+
+      // 9
+      let elem9 = document.getElementById("elem9");
+      elem9.insertAdjacentHTML(
+        "beforeBegin",
+        '<div class="www"><p>text</p><p>text</p><input></div>'
+      );
+
+      // 10
+      let input10 = document.getElementById("input10");
+      let button10 = document.getElementById("button10");
+      button10.addEventListener("click", function () {
+        let clone10 = input10.cloneNode(true);
+        button10.insertAdjacentElement("beforeBegin", clone10);
+      });
+
+      // 11_1
+      let elem11_1 = document.getElementById("elem11_1");
+      console.log(elem11_1.matches("div.www"));
+
+      // 11_2
+      let elem11_2 = document.getElementById("elem11_2");
+      console.log(elem11_2.matches("p"));
+
+      // 11_3
+      let elem1_11_3 = document.getElementById("elem1-11_3");
+      let elem2_11_3 = document.getElementById("elem2-11_3");
+      let contains = elem1_11_3.contains(elem2_11_3);
+      console.log(contains);
+    </script>
+  </body>
+</html>
