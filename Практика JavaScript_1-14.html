@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Практика JavaScript</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+
+      #calendar6_1,
+      #calendar6_2,
+      #calendar6_3,
+      #calendar6_4 {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+      }
+
+      #calendar6_1 li,
+      #calendar6_2 li,
+      #calendar6_3 li,
+      #calendar6_4 li {
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f0f0f0;
+      }
+
+      #calendar6_2 li.currentDay,
+      #calendar6_3 li.currentDay,
+      #calendar6_4 li.currentDay {
+        background-color: green;
+      }
+
+      #resMonth6_3,
+      #resMonth6_4 {
+        font-weight: bold;
+        font-size: 30px;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+      }
+
+      #calendar-container6_3,
+      #calendar-container6_4 {
+        position: relative;
+        display: inline-block;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      #parent8 {
+        width: 600px;
+      }
+
+      #input8 {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
+      #table8 {
+        width: 100%;
+      }
+
+      #table8 td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      #parent10_1 {
+        text-align: center;
+      }
+
+      #parent10_1 > * {
+        margin-bottom: 10px;
+      }
+
+      #timer10_1 {
+        font-size: 18px;
+      }
+
+      #text10_1 {
+        font-size: 17px;
+        font-style: italic;
+      }
+
+      #start10_1 {
+        padding: 5px 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nonactive10_1 {
+        display: none;
+      }
+
+      .active10_1 {
+        display: inline-block;
+      }
+
+      #parent10_2 {
+        text-align: center;
+      }
+
+      #parent10_2 > * {
+        margin-bottom: 10px;
+      }
+
+      #timer10_2 {
+        font-size: 18px;
+      }
+
+      #text10_2 {
+        font-size: 17px;
+        font-style: italic;
+      }
+
+      #start10_2 {
+        padding: 5px 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .nonactive10_2 {
+        display: none;
+      }
+
+      .active10_2 {
+        display: inline-block;
+      }
+
+      #parent11 {
+        position: relative;
+      }
+
+      #elem11 {
+        padding: 5px;
+        font-size: 18px;
+      }
+
+      #parent11 ul {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        background-color: white;
+      }
+
+      #parent11 li {
+        border: 1px solid gray;
+        font-size: 18px;
+        padding: 5px;
+      }
+
+      #parent11 li:hover {
+        border: 1px solid black;
+        cursor: pointer;
+      }
+
+      .spoiler12:not(.active12) {
+        display: none;
+      }
+
+      #parent13 {
+        margin: 0 auto;
+        width: 400px;
+      }
+
+      .menu13 a {
+        margin-right: 5px;
+        display: inline-block;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        border: 1px solid gray;
+      }
+
+      .menu13 a:hover {
+        background: #f8f8f8;
+      }
+
+      .menu13 a.active13 {
+        border-color: transparent;
+        background: #f2f2f2;
+      }
+
+      .tabs13 .tab13:not(.active13) {
+        display: none;
+      }
+
+      .tabs13 .tab13 {
+        padding: 10px;
+        background: #f2f2f2;
+        height: 300px;
+      }
+
+      #parent14 {
+        margin: 0 auto;
+        width: 400px;
+      }
+
+      .tab14 {
+        margin-bottom: 10px;
+      }
+
+      .tab14 .link14 a {
+        display: block;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        background: #f8f8f8;
+        border: 1px solid gray;
+      }
+
+      .tab14 .link14:hover a {
+        background: #f2f2f2;
+      }
+
+      .tab14:not(.active14) .text14 {
+        display: none;
+      }
+
+      .tab14 .text14 {
+        border: 1px dashed gray;
+        border-top: none;
+        padding: 10px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Калькуляторы фигур на JavaScript</h1>
+    <h5>
+      1_1 - Сделайте калькулятор, который будет находить площадь и периметр
+      квадрата.
+    </h5>
+    <input type="text" placeholder="Введите сторону квадрата" id="input1_1" />
+    <p id="res1_1"></p>
+    <button id="button1_1">Рассчитать</button>
+    <br />
+    <h5>
+      1_2 - Сделайте калькулятор, который будет находить площадь и периметр
+      прямоугольника.
+    </h5>
+    <input
+      type="text"
+      placeholder="Введите первую сторону прямоугольника"
+      id="input1_2-a"
+    />
+    <input
+      type="text"
+      placeholder="Введите вторую сторону прямоугольника"
+      id="input1_2-b"
+    />
+    <p id="res1_2"></p>
+    <button id="button1_2">Рассчитать</button>
+    <br />
+    <h5>
+      1_3 - Сделайте калькулятор, который будет находить площадь круга и длину
+      окружности.
+    </h5>
+    <input type="text" placeholder="Введите радиус окружности" id="input1_3" />
+    <p id="res1_3"></p>
+    <button id="button1_3">Рассчитать</button>
+    <br />
+    <h5>
+      1_4 - Сделайте калькулятор, который будет находить площадь треугольника по
+      трем сторонам.
+    </h5>
+    <input
+      type="text"
+      placeholder="Введите первую сторону треугольника"
+      id="input1_4-a"
+    />
+    <input
+      type="text"
+      placeholder="Введите вторую сторону треугольника"
+      id="input1_4-b"
+    />
+    <input
+      type="text"
+      placeholder="Введите третью сторону треугольника"
+      id="input1_4-c"
+    />
+    <p id="res1_4"></p>
+    <button id="button1_4">Рассчитать</button>
+    <br />
+    <h1>Математические калькуляторы на JavaScript</h1>
+    <h5>
+      2_1 - Напишите скрипт, который будет находить корни квадратного уравнения.
+      Для этого сделайте 3 инпута, в которые будут вводиться коэффициенты
+      уравнения.
+    </h5>
+    <input type="text" placeholder="Введите коэффициент a" id="inputA2_1" />
+    <input type="text" placeholder="Введите коэффициент b" id="inputB2_1" />
+    <input type="text" placeholder="Введите коэффициент c" id="inputC2_1" />
+    <button id="button2_1">Найти корни</button>
+    <br />
+    <h5>
+      2_2 - Даны 3 инпута. В них вводятся числа. Проверьте, что эти числа
+      являются тройкой Пифагора: квадрат самого большого числа должен быть равен
+      сумме квадратов двух остальных.
+    </h5>
+    <input type="text" placeholder="Введите первое число" id="inputA2_2" />
+    <input type="text" placeholder="Введите второе число" id="inputB2_2" />
+    <input type="text" placeholder="Введите третье число" id="inputC2_2" />
+    <button id="button2_2">Проверить</button>
+    <br />
+    <h5>
+      2_3 - Дан инпут и кнопка. В инпут вводится число. По нажатию на кнопку
+      выведите список делителей этого числа.
+    </h5>
+    <input type="text" id="input2_3" />
+    <button id="button2_3">Нажать</button>
+    <br />
+    <h5>
+      2_4 - Даны 2 инпута и кнопка. В инпуты вводятся числа. По нажатию на
+      кнопку выведите список общих делителей этих двух чисел.
+    </h5>
+    <input
+      type="text"
+      id="input2_4_first"
+      placeholder="Введите первое число: "
+    />
+    <input
+      type="text"
+      id="input2_4_second"
+      placeholder="Введите второе число: "
+    />
+    <button id="button2_4">Нажать</button>
+    <br />
+    <h5>
+      2_5 - Даны 2 инпута и кнопка. В инпуты вводятся числа. По нажатию на
+      кнопку выведите наибольший общий делитель этих двух чисел.
+    </h5>
+    <input
+      type="text"
+      id="input2_5_first"
+      placeholder="Введите первое число: "
+    />
+    <input
+      type="text"
+      id="input2_5_second"
+      placeholder="Введите второе число: "
+    />
+    <button id="button2_5">Нажать</button>
+    <br />
+    <h5>
+      2_6 - Даны 2 инпута и кнопка. В инпуты вводятся числа. По нажатию на
+      кнопку выведите наименьшее число, которое делится и на одно, и на второе
+      из введенных чисел.
+    </h5>
+    <input
+      type="text"
+      id="input2_6_first"
+      placeholder="Введите первое число: "
+    />
+    <input
+      type="text"
+      id="input2_6_second"
+      placeholder="Введите второе число: "
+    />
+    <button id="button2_6">Нажать</button>
+    <br />
+    <h1>Игра угадай число на JavaScript</h1>
+    <h5>3 - Реализуйте описанную игру.</h5>
+    <input type="text" placeholder="Введите число от 1 до 100" id="input3" />
+    <br />
+    <h1>Игра угадай ячейку на JavaScript</h1>
+    <h5>4_1 - Реализуйте описанную игру.</h5>
+    <table id="gameTable4_1" border="1"></table>
+    <br />
+    <h5>
+      4_2 - Модифицируйте предыдущую задачу, добавив таймер обратного отсчета.
+      Если игрок не успеет угадать числа за отведенное время - он проиграл.
+    </h5>
+    <table id="gameTable4_2" border="1"></table>
+    <p id="timerResult4_2"></p>
+    <p id="res4_2"></p>
+    <br />
+    <h1>Экранная клавиатура на JavaScript</h1>
+    <h5>
+      5_1 - Реализуйте описанную клавиатуру. Пусть эта клавиатура будет
+      привязана к какому-нибудь инпуту, то есть кликая по ней, мы будем вводить
+      данные в этот инпут.
+    </h5>
+    <input type="text" id="textInput5_1" readonly />
+    <div id="keyboard5_1"></div>
+    <br />
+    <h5>
+      5_2 - Сделайте на вашей клавиатуре кнопку Caps Lock, которая будет делать
+      так, чтобы все буквы переводились в верхний регистр.
+    </h5>
+    <input type="text" id="textInput5_2" readonly />
+    <div id="keyboard5_2"></div>
+    <br />
+    <h1>Линейный календарь на JavaScript</h1>
+    <h5>
+      6_1 - Выведите в виде списка ul все числа текущего месяца. Средствами CSS
+      поставьте пункты списка в ряд.
+    </h5>
+    <ul id="calendar6_1"></ul>
+    <br />
+    <h5>
+      6_2 - Сделайте так, чтобы текущий день в календаре был выделен
+      каким-нибудь цветом.
+    </h5>
+    <ul id="calendar6_2"></ul>
+    <br />
+    <h5>
+      6_3 - Сделайте так, чтобы над списком было написано название текущего
+      месяца по-русски и номер года.
+    </h5>
+    <div id="calendar-container6_3">
+      <p id="resMonth6_3"></p>
+      <ul id="calendar6_3"></ul>
+    </div>
+    <br />
+    <h5>
+      6_4 - Сделайте так, чтобы над календарем появились ссылки вперед и назад,
+      позволяющие менять месяц. Месяц и год, выводимые над календарем, должны
+      соответствовать отображаемому месяцу.
+    </h5>
+    <div id="calendar-container6_4">
+      <div id="navigation6_4">
+        <button id="prev-month6_4">&lt;</button>
+        <p id="resMonth6_4"></p>
+        <button id="next-month6_4">&gt;</button>
+      </div>
+      <ul id="calendar6_4"></ul>
+    </div>
+    <br />
+    <h1>Поиск тегов на JavaScript</h1>
+    <h5>
+      7 - Продумайте, как удобнее всего хранить имена тегов и их описания в
+      соответствии с поставленной задачей. Реализуйте описанный сайт.
+    </h5>
+    <label for="tagInput7">Введите имя HTML тега:</label>
+    <p id="description7"></p>
+    <input type="text" id="tagInput7" placeholder="например, div" />
+    <br />
+    <h1>Поиск исторических событий на JavaScript</h1>
+    <h5>
+      8 - Продумайте, как удобнее всего хранить исторические события. Реализуйте
+      описанный сайт.
+    </h5>
+    <div id="parent8">
+      <input id="input8" placeholder="Введите год и нажмите Enter" />
+      <table id="table8"></table>
+    </div>
+    <br />
+    <h1>Гороскоп на JavaScript</h1>
+    <h5>
+      9_1 - Продумайте, как вы будете хранить гороскопы в соответствии с
+      поставленной задачей. Реализуйте показ гороскопа за текущий день.
+    </h5>
+    <label for="birthdate9_1">Введите дату рождения:</label>
+    <input type="date" id="birthdate9_1" />
+    <button onclick="getHoroscope9_1()">Получить гороскоп</button>
+    <div id="horoscope9_1"></div>
+    <br />
+    <h5>
+      9_2 - А теперь реализуйте работу радиокнопок, позволяющих выбрать день, за
+      который нужно показать гороскоп.
+    </h5>
+    <label for="birthdate9_2">Введите дату рождения:</label>
+    <input type="date" id="birthdate9_2" required />
+    <div>
+      <input type="radio" id="today" name="day" value="today" checked />
+      <label for="today">Сегодня</label>
+      <input type="radio" id="tomorrow" name="day" value="tomorrow" />
+      <label for="tomorrow">Завтра</label>
+      <input
+        type="radio"
+        id="dayAfterTomorrow"
+        name="day"
+        value="dayAfterTomorrow"
+      />
+      <label for="dayAfterTomorrow">Послезавтра</label>
+    </div>
+    <button onclick="getHoroscope9_2()">Показать гороскоп</button>
+    <div id="horoscopeResult9_2"></div>
+    <br />
+    <h1>Сайт предсказаний на JavaScript</h1>
+    <h5>
+      10_1 - Сейчас мы сделаем сайт, который будет выдавать предсказания. Пусть
+      на этом сайте будет кнопка, по нажатию на которую будет запускаться
+      таймер, который будет каждые 0.1 секунд выводить в в какой-нибудь див
+      случайное число от 1 до некоторого максимального. Реализуйте описанный
+      сайт.
+    </h5>
+    <div id="parent10_1">
+      <div id="timer10_1">?</div>
+      <div id="text10_1"></div>
+      <button id="start10_1">узнать свою судьбу</button>
+      <button id="stop10_1" class="nonactive10_1">получить предсказание</button>
+    </div>
+    <br />
+    <h5>
+      10_2 - Сделайте так, чтобы предсказания были двух видов: хорошие и плохие.
+      Сделайте так, чтобы плохие красились в красный цвет, а хорошие - в
+      зеленый.
+    </h5>
+    <div id="parent10_2">
+      <div id="timer10_2">?</div>
+      <div id="text10_2"></div>
+      <button id="start10_2">узнать свою судьбу</button>
+      <button id="stop10_2" class="nonactive10_2">получить предсказание</button>
+    </div>
+    <br />
+    <h1>Автодополнение на JavaScript</h1>
+    <h5>
+      11 - Скопируйте себе приведенный HTML и CSS коды. Реализуйте
+      автодополнение согласно описанному алгоритму.
+    </h5>
+    <div id="parent11">
+      <input id="elem11" placeholder="Monaco" />
+      <ul id="list11"></ul>
+    </div>
+    <br />
+    <h1>Спойлер на JavaScript</h1>
+    <h5>
+      12 - Скопируйте себе приведенный HTML и CSS коды. Реализуйте описанную
+      работу спойлеров.
+    </h5>
+    <p>абзац с текстом</p>
+    <p>
+      абзац с текстом
+      <a href="" class="toggle12">развернуть спойлер 1</a>
+    </p>
+    <p class="spoiler12">скрытый спойлер 1</p>
+    <p>абзац с текстом</p>
+    <p>
+      абзац с текстом
+      <a href="" class="toggle12">развернуть спойлер 2</a>
+    </p>
+    <p class="spoiler12">скрытый спойлер 2</p>
+    <p>абзац с текстом</p>
+    <br />
+    <h1>Вкладки на JavaScript</h1>
+    <h5>
+      13 - Скопируйте себе приведенный HTML и CSS коды. Реализуйте вкладки
+      согласно описанному алгоритму.
+    </h5>
+    <div id="parent13">
+      <div class="menu13">
+        <a href="#" class="active13">вкладка 1</a>
+        <a href="#">вкладка 2</a>
+        <a href="#">вкладка 3</a>
+      </div>
+      <div class="tabs13">
+        <div class="tab13 active13">текст вкладки 1</div>
+        <div class="tab13">текст вкладки 2</div>
+        <div class="tab13">текст вкладки 3</div>
+      </div>
+    </div>
+    <br />
+    <h1>Аккордеон на JavaScript</h1>
+    <h5>
+      14 - Скопируйте себе приведенный HTML и CSS коды. Реализуйте аккордеон
+      согласно описанному алгоритму.
+    </h5>
+    <div id="parent14">
+      <div class="tab14 active14">
+        <div class="link14">
+          <a href="#">вкладка 1</a>
+        </div>
+        <div class="text14">текст вкладки 1</div>
+      </div>
+      <div class="tab14">
+        <div class="link14">
+          <a href="#">вкладка 2</a>
+        </div>
+        <div class="text14">текст вкладки 2</div>
+      </div>
+      <div class="tab14">
+        <div class="link14">
+          <a href="#">вкладка 3</a>
+        </div>
+        <div class="text14">текст вкладки 3</div>
+      </div>
+    </div>
+    <script>
+      // 1_1
+      let input1_1 = document.getElementById("input1_1");
+      let button1_1 = document.getElementById("button1_1");
+      let res1_1 = document.getElementById("res1_1");
+      button1_1.addEventListener("click", function () {
+        let perimeter_res1_1 = +input1_1.value * 4;
+        let square_res1_1 = +input1_1.value * +input1_1.value;
+        res1_1.innerText = `Периметр квадрата: ${perimeter_res1_1}, Площадь квадрата: ${square_res1_1}`;
+      });
+
+      // 1_2
+      let firstSide1_2 = document.getElementById("input1_2-a");
+      let secondSide1_2 = document.getElementById("input1_2-b");
+      let button1_2 = document.getElementById("button1_2");
+      let res1_2 = document.getElementById("res1_2");
+      button1_2.addEventListener("click", function () {
+        let perimeter_res1_2 = 2 * (+firstSide1_2.value + +secondSide1_2.value);
+        let square_res1_2 = +firstSide1_2.value * +secondSide1_2.value;
+        res1_2.innerText = `Периметр прямоугольника: ${perimeter_res1_2}, Площадь прямоугольника: ${square_res1_2}`;
+      });
+
+      // 1_3
+      const Pi = 3.14;
+      let input1_3 = document.getElementById("input1_3");
+      let res1_3 = document.getElementById("res1_3");
+      let button1_3 = document.getElementById("button1_3");
+      button1_3.addEventListener("click", function () {
+        let circumferenceOfTheCircle1_3 = 2 * Pi * +input1_3.value;
+        let areaOfTheCircle1_3 = Pi * input1_3.value ** 2;
+        res1_3.innerText = `Длина окружности: ${circumferenceOfTheCircle1_3.toFixed(
+          2
+        )}, Площадь круга: ${areaOfTheCircle1_3}`;
+      });
+
+      // 1_4
+      let firstSide1_4 = document.getElementById("input1_4-a");
+      let secondSide1_4 = document.getElementById("input1_4-b");
+      let thirdSide1_4 = document.getElementById("input1_4-c");
+      let res1_4 = document.getElementById("res1_4");
+      let button1_4 = document.getElementById("button1_4");
+      button1_4.addEventListener("click", function () {
+        let side1OfTriangle = parseFloat(firstSide1_4.value);
+        let side2OfTriangle = parseFloat(secondSide1_4.value);
+        let side3OfTriangle = parseFloat(thirdSide1_4.value);
+        let halfPerimeter1_4 =
+          (side1OfTriangle + side2OfTriangle + side3OfTriangle) / 2;
+        let areaOfTheTriangle1_4 = Math.sqrt(
+          halfPerimeter1_4 *
+            (halfPerimeter1_4 - side1OfTriangle) *
+            (halfPerimeter1_4 - side2OfTriangle) *
+            (halfPerimeter1_4 - side3OfTriangle)
+        );
+        res1_4.innerText = `Площадь треугольника по трем сторонам: ${areaOfTheTriangle1_4}`;
+      });
+
+      // 2_1
+      let button2_1 = document.getElementById("button2_1");
+      button2_1.addEventListener("click", function () {
+        let a2_1 = parseFloat(document.getElementById("inputA2_1").value);
+        let b2_1 = parseFloat(document.getElementById("inputB2_1").value);
+        let c2_1 = parseFloat(document.getElementById("inputC2_1").value);
+        let discriminant = b2_1 * b2_1 - 4 * a2_1 * c2_1;
+        if (discriminant > 0) {
+          let x1 = (-b2_1 + Math.sqrt(discriminant)) / (2 * a2_1);
+          let x2 = (-b2_1 - Math.sqrt(discriminant)) / (2 * a2_1);
+          alert(`Корни квадратного уравнения: x1 = ${x1}, x2 = ${x2}`);
+        } else if (discriminant === 0) {
+          let x = -b2_1 / (2 * a2_1);
+          alert(`Корень квадратного уравнения: x = ${x}`);
+        } else {
+          alert("Квадратное уравнение не имеет вещественных корней.");
+        }
+      });
+
+      // 2_2
+      let button2_2 = document.getElementById("button2_2");
+      button2_2.addEventListener("click", function () {
+        let firstDigit2_2 = +document.getElementById("inputA2_2").value;
+        let secondDigit2_2 = +document.getElementById("inputB2_2").value;
+        let thirdDigit2_2 = +document.getElementById("inputC2_2").value;
+
+        if (
+          isThePythagoreanThree(firstDigit2_2, secondDigit2_2, thirdDigit2_2)
+        ) {
+          alert("Числа являются тройкой Пифагора");
+        } else {
+          alert("Числа не являются тройкой Пифагора");
+        }
+      });
+
+      function isThePythagoreanThree(
+        firstDigit2_2,
+        secondDigit2_2,
+        thirdDigit2_2
+      ) {
+        return (
+          firstDigit2_2 * firstDigit2_2 + secondDigit2_2 * secondDigit2_2 ===
+          thirdDigit2_2 * thirdDigit2_2
+        );
+      }
+
+      // 2_3
+      let input2_3 = document.getElementById("input2_3");
+      let button2_3 = document.getElementById("button2_3");
+      button2_3.addEventListener("click", function () {
+        let number2_3 = parseInt(input2_3.value);
+        let divisors2_3 = findDivisors(number2_3);
+        alert("Список делителей: " + divisors2_3.join(", "));
+      });
+
+      function findDivisors(number) {
+        let divisors2_3 = [];
+        for (let i2_3 = 1; i2_3 <= number; i2_3++) {
+          if (number % i2_3 === 0) {
+            divisors2_3.push(i2_3);
+          }
+        }
+        return divisors2_3;
+      }
+
+      // 2_4
+      let button2_4 = document.getElementById("button2_4");
+      button2_4.addEventListener("click", function () {
+        let input2_4_first = parseInt(
+          document.getElementById("input2_4_first").value
+        );
+        let input2_4_second = parseInt(
+          document.getElementById("input2_4_second").value
+        );
+        let minNum2_4 = Math.min(input2_4_first, input2_4_second);
+        let commonDivisors2_4 = [];
+        for (let i2_4 = 1; i2_4 <= minNum2_4; i2_4++) {
+          if (input2_4_first % i2_4 === 0 && input2_4_second % i2_4 === 0) {
+            commonDivisors2_4.push(i2_4);
+          }
+        }
+        alert("Общие делители: " + commonDivisors2_4.join(", "));
+      });
+
+      // 2_5
+      let button2_5 = document.getElementById("button2_5");
+      button2_5.addEventListener("click", function () {
+        let input2_5_first = parseInt(
+          document.getElementById("input2_5_first").value
+        );
+        let input2_5_second = parseInt(
+          document.getElementById("input2_5_second").value
+        );
+        let nod2_5 = findNOD(input2_5_first, input2_5_second);
+        alert("Наибольший общий делитель: " + nod2_5);
+      });
+
+      function findNOD(a, b) {
+        while (b !== 0) {
+          let temp2_5 = b;
+          b = a % b;
+          a = temp2_5;
+        }
+        return a;
+      }
+
+      // 2_6
+      let button2_6 = document.getElementById("button2_6");
+      button2_6.addEventListener("click", function () {
+        let input2_6_first = parseInt(
+          document.getElementById("input2_6_first").value
+        );
+        let input2_6_second = parseInt(
+          document.getElementById("input2_6_second").value
+        );
+        let lcm2_6 = findLeastCommonMultiple(input2_6_first, input2_6_second);
+        alert("Наименьшее число, которое делится на оба числа: " + lcm2_6);
+      });
+
+      function findLeastCommonMultiple(a, b) {
+        return (a * b) / findGCD(a, b);
+      }
+
+      function findGCD(a, b) {
+        while (b !== 0) {
+          let temp2_6 = b;
+          b = a % b;
+          a = temp2_6;
+        }
+        return a;
+      }
+
+      // 3
+      let input3 = document.getElementById("input3");
+      let compNumber3 = getRandomInt(1, 100);
+      input3.addEventListener("blur", function () {
+        if (input3.value == compNumber3) {
+          alert("Вы угадали!");
+        } else if (input3.value > compNumber3) {
+          alert("Введите число поменьше");
+        } else {
+          alert("Введите число побольше");
+        }
+      });
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // 4_1
+      let gameTable4_1 = document.getElementById("gameTable4_1");
+      let selectedCells4_1 = [];
+      let foundCells4_1 = 0;
+
+      while (selectedCells4_1.length < 10) {
+        let randomRow4_1 = Math.floor(Math.random() * 10);
+        let randomCol4_1 = Math.floor(Math.random() * 10);
+        let cellId4_1 = randomRow4_1 + "-" + randomCol4_1;
+
+        if (!selectedCells4_1.includes(cellId4_1)) {
+          selectedCells4_1.push(cellId4_1);
+        }
+      }
+
+      gameTable4_1.addEventListener("click", function (event) {
+        let clickedCell4_1 = event.target;
+
+        if (
+          clickedCell4_1.tagName === "TD" &&
+          !clickedCell4_1.classList.contains("found")
+        ) {
+          let cellId4_1 =
+            clickedCell4_1.parentNode.rowIndex + "-" + clickedCell4_1.cellIndex;
+
+          if (selectedCells4_1.includes(cellId4_1)) {
+            clickedCell4_1.style.backgroundColor = "green";
+            clickedCell4_1.classList.add("found");
+            foundCells4_1++;
+
+            if (foundCells4_1 === 10) {
+              alert("Ура! Вы нашли все ячейки!");
+            }
+          } else {
+            clickedCell4_1.style.backgroundColor = "red";
+          }
+        }
+      });
+
+      for (let i = 0; i < 10; i++) {
+        let tr4_1 = document.createElement("tr");
+
+        for (let i = 0; i < 10; i++) {
+          let td4_1 = document.createElement("td");
+          tr4_1.appendChild(td4_1);
+        }
+        gameTable4_1.appendChild(tr4_1);
+      }
+
+      // 4_2
+      let gameTable4_2 = document.getElementById("gameTable4_2");
+      let selectedCells4_2 = [];
+      let foundCells4_2 = 0;
+      let timeLeft4_2 = 60;
+      let timerResult4_2 = document.getElementById("timerResult4_2");
+      let res4_2 = document.getElementById("res4_2");
+
+      for (let i = 0; i < 10; i++) {
+        let tr4_2 = document.createElement("tr");
+
+        for (let j = 0; j < 10; j++) {
+          let td4_2 = document.createElement("td");
+          tr4_2.appendChild(td4_2);
+        }
+        gameTable4_2.appendChild(tr4_2);
+      }
+
+      let timerInterval = setInterval(updateTimer, 1000);
+      function updateTimer() {
+        if (timeLeft4_2 >= 0) {
+          timerResult4_2.textContent = "Времени осталось: " + timeLeft4_2 + "s";
+          timeLeft4_2--;
+        } else {
+          clearInterval(timerInterval);
+          res4_2.textContent = "Игра окончена! Время истекло";
+        }
+      }
+
+      while (selectedCells4_2.length < 10) {
+        let randomRow4_2 = Math.floor(Math.random() * 10);
+        let randomCol4_2 = Math.floor(Math.random() * 10);
+        let cellId4_2 = randomRow4_2 + "-" + randomCol4_2;
+
+        if (!selectedCells4_2.includes(cellId4_2)) {
+          selectedCells4_2.push(cellId4_2);
+        }
+      }
+
+      gameTable4_2.addEventListener("click", function (event) {
+        let clickedCell4_2 = event.target;
+
+        if (
+          clickedCell4_2.tagName === "TD" &&
+          !clickedCell4_2.classList.contains("found")
+        ) {
+          let cellId4_2 =
+            clickedCell4_2.parentNode.rowIndex + "-" + clickedCell4_2.cellIndex;
+
+          if (selectedCells4_2.includes(cellId4_2)) {
+            clickedCell4_2.style.backgroundColor = "green";
+            clickedCell4_2.classList.add("found");
+            foundCells4_2++;
+
+            if (foundCells4_2 === 10) {
+              clearInterval(timerInterval);
+              alert("Ура! Вы нашли все ячейки!");
+            }
+          } else {
+            clickedCell4_2.style.backgroundColor = "red";
+          }
+        }
+      });
+
+      // 5_1
+      let textInput5_1 = document.getElementById("textInput5_1");
+      let keyboard5_1 = document.getElementById("keyboard5_1");
+      let keys5_1 = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "q",
+        "w",
+        "e",
+        "r",
+        "t",
+        "y",
+        "u",
+        "i",
+        "o",
+        "p",
+        "a",
+        "s",
+        "d",
+        "f",
+        "g",
+        "h",
+        "j",
+        "k",
+        "l",
+        "z",
+        "x",
+        "c",
+        "v",
+        "b",
+        "n",
+        "m",
+      ];
+
+      keys5_1.forEach((key5_1) => {
+        let button5_1 = document.createElement("button");
+        button5_1.textContent = key5_1;
+        button5_1.addEventListener("click", () => {
+          textInput5_1.value += key5_1;
+        });
+        keyboard5_1.appendChild(button5_1);
+      });
+
+      // 5_2
+      let textInput5_2 = document.getElementById("textInput5_2");
+      let keyboard5_2 = document.getElementById("keyboard5_2");
+      let keys5_2 = [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "0",
+        "q",
+        "w",
+        "e",
+        "r",
+        "t",
+        "y",
+        "u",
+        "i",
+        "o",
+        "p",
+        "a",
+        "s",
+        "d",
+        "f",
+        "g",
+        "h",
+        "j",
+        "k",
+        "l",
+        "z",
+        "x",
+        "c",
+        "v",
+        "b",
+        "n",
+        "m",
+        "CapsLock",
+      ];
+
+      let capsLockActive = false;
+      keys5_2.forEach((key5_2) => {
+        let button5_2 = document.createElement("button");
+        button5_2.textContent = key5_2;
+        if (key5_2 === "CapsLock") {
+          button5_2.addEventListener("click", () => {
+            capsLockActive = !capsLockActive;
+            button5_2.style.backgroundColor = capsLockActive ? "#4CAF50" : "";
+          });
+        } else {
+          button5_2.addEventListener("click", () => {
+            if (capsLockActive) {
+              textInput5_2.value += key5_2.toUpperCase();
+            } else {
+              textInput5_2.value += key5_2.toLowerCase();
+            }
+          });
+        }
+
+        keyboard5_2.appendChild(button5_2);
+      });
+
+      // 6_1
+      let calendar6_1 = document.getElementById("calendar6_1");
+      let currentDate6_1 = new Date();
+      let currentMonth6_1 = currentDate6_1.getMonth();
+      let daysInMonth6_1 = new Date(
+        currentDate6_1.getFullYear(),
+        currentMonth6_1 + 1,
+        0
+      ).getDate();
+      for (let i = 1; i <= daysInMonth6_1; i++) {
+        let listItem6_1 = document.createElement("li");
+        listItem6_1.textContent = i;
+        calendar6_1.appendChild(listItem6_1);
+      }
+
+      // 6_2
+      let calendar6_2 = document.getElementById("calendar6_2");
+      let currentDate6_2 = new Date();
+      let currentMonth6_2 = currentDate6_2.getMonth();
+      let daysInMonth6_2 = new Date(
+        currentDate6_2.getFullYear(),
+        currentMonth6_2 + 1,
+        0
+      ).getDate();
+
+      for (let i = 1; i <= daysInMonth6_2; i++) {
+        let listItem6_2 = document.createElement("li");
+        listItem6_2.textContent = i;
+        if (i === currentDate6_2.getDate()) {
+          listItem6_2.classList.add("currentDay");
+        }
+        calendar6_2.appendChild(listItem6_2);
+      }
+
+      // 6_3
+      let calendar6_3 = document.getElementById("calendar6_3");
+      let resMonth6_3 = document.getElementById("resMonth6_3");
+      let months6_3 = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь",
+      ];
+      let currentDate6_3 = new Date();
+      let currentMonth6_3 = currentDate6_3.getMonth();
+      let daysInMonth6_3 = new Date(
+        currentDate6_3.getFullYear(),
+        currentMonth6_3 + 1,
+        0
+      ).getDate();
+
+      for (let i = 1; i <= daysInMonth6_3; i++) {
+        let listItem6_3 = document.createElement("li");
+        listItem6_3.textContent = i;
+        if (i === currentDate6_3.getDate()) {
+          listItem6_3.classList.add("currentDay");
+        }
+        calendar6_3.appendChild(listItem6_3);
+      }
+
+      resMonth6_3.textContent =
+        months6_3[currentMonth6_3] + " - " + currentDate6_3.getFullYear();
+
+      // 6_4
+      let calendar6_4 = document.getElementById("calendar6_4");
+      let resMonth6_4 = document.getElementById("resMonth6_4");
+      let prevMonthBtn6_4 = document.getElementById("prev-month6_4");
+      let nextMonthBtn6_4 = document.getElementById("next-month6_4");
+      let months6_4 = [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь",
+      ];
+      let currentDate6_4 = new Date();
+      let currentMonth6_4 = currentDate6_4.getMonth();
+      let currentYear6_4 = currentDate6_4.getFullYear();
+
+      function updateCalendar(month, year) {
+        calendar6_4.innerHTML = "";
+        let daysInMonth6_4 = new Date(year, month + 1, 0).getDate();
+        resMonth6_4.textContent = months6_4[month] + " - " + year;
+        for (let i = 1; i <= daysInMonth6_4; i++) {
+          let listItem6_4 = document.createElement("li");
+          listItem6_4.textContent = i;
+          calendar6_4.appendChild(listItem6_4);
+        }
+
+        if (currentMonth6_4 === month && currentYear6_4 === year) {
+          let currentDayItem = calendar6_4.querySelector(
+            "li:nth-child(" + currentDate6_4.getDate() + ")"
+          );
+          if (currentDayItem) {
+            currentDayItem.classList.add("currentDay");
+          }
+        }
+      }
+
+      prevMonthBtn6_4.addEventListener("click", () => {
+        currentDayItem = false;
+        currentMonth6_4--;
+        if (currentMonth6_4 < 0) {
+          currentMonth6_4 = 11;
+          currentYear6_4--;
+        }
+        updateCalendar(currentMonth6_4, currentYear6_4);
+      });
+
+      nextMonthBtn6_4.addEventListener("click", () => {
+        currentMonth6_4++;
+        if (currentMonth6_4 > 11) {
+          currentMonth6_4 = 0;
+          currentYear6_4++;
+        }
+        updateCalendar(currentMonth6_4, currentYear6_4);
+      });
+      updateCalendar(currentMonth6_4, currentYear6_4);
+
+      // 7
+      const tagDescriptions = {
+        div: "Тег <div> является блочным элементом и используется для группировки других элементов для стилизации или манипуляции с помощью JavaScript.",
+        p: "Тег <p> используется для определения абзаца текста.",
+        a: "Тег <a> используется для создания гиперссылок на другие документы или ресурсы.",
+        span: "Тег <span> является строчным элементом и используется для выделения части текста или других элементов внутри блока.",
+        img: "Тег <img> используется для вставки изображений на веб-страницу.",
+        h1: "Тег <h1> определяет самый важный заголовок первого уровня.",
+        h2: "Тег <h2> определяет заголовок второго уровня.",
+      };
+      function displayTagDescription() {
+        let input7 = document.getElementById("tagInput7");
+        let descriptionDiv7 = document.getElementById("description7");
+        let tagName7 = input7.value.toLowerCase();
+        if (tagDescriptions[tagName7]) {
+          descriptionDiv7.innerText = `${tagDescriptions[tagName7]}`;
+        } else {
+          descriptionDiv7.innerText = "Описание для данного тега не найдено.";
+        }
+      }
+      let input7 = document.getElementById("tagInput7");
+      input7.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          displayTagDescription();
+        }
+      });
+
+      // 8
+      const historicalEvents = {
+        2005: [
+          {
+            date: "23.04.2005",
+            title: "Самое первое видео на YouTube",
+            description: "Появляется самое первое видео на YouTube.",
+          },
+          {
+            date: "16.08.2005",
+            title: "Рекорд пребывания в космосе",
+            description:
+              "Российский космонавт Сергей Крикалёв превзошёл рекорд суммарной продолжительности пребывания в космосе.",
+          },
+          {
+            date: "01.10.2005",
+            title: "Старт Союз ТМА-7",
+            description:
+              "Старт космического корабля Союз ТМА-7 с международным экипажем.",
+          },
+        ],
+        1945: [
+          {
+            date: "09.05.1945",
+            title: "Конец Великой Отечественной войны",
+            description: "Закончилась Великая Отечественная война.",
+          },
+          {
+            date: "09.05.1945",
+            title: "Освобождение Праги",
+            description: "Советскими войсками освобождена Прага.",
+          },
+          {
+            date: "24.06.1945",
+            title: "Парад Победы",
+            description: "В Москве на Красной площади прошёл Парад Победы.",
+          },
+        ],
+      };
+      let parent8 = document.getElementById("parent8");
+      let table8 = document.getElementById("table8");
+      let input8 = document.getElementById("input8");
+      input8.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          displayEvents();
+        }
+      });
+      function displayEvents() {
+        let year = input8.value;
+        let events = historicalEvents[year];
+        table8.innerHTML = "";
+        if (events) {
+          let headerRow = document.createElement("tr");
+          headerRow.innerHTML = `<th>Дата</th><th>Название</th><th>Описание</th>`;
+          table8.appendChild(headerRow);
+          events.forEach((event) => {
+            let row = document.createElement("tr");
+            row.innerHTML = `<td>${event.date}</td><td>${event.title}</td><td>${event.description}</td>`;
+            table8.appendChild(row);
+          });
+        } else {
+          table8.innerHTML = '<tr><td colspan="3">События не найдены</td></tr>';
+        }
+      }
+
+      // 9_1
+      const horoscopes9_1 = {
+        Овен: "Сегодня вас ждет множество интересных событий.",
+        Телец: "Сегодня благоприятный день для новых начинаний.",
+        Близнецы: "Сегодня вам стоит уделить время своим близким.",
+        Рак: "Сегодня возможны неожиданные встречи.",
+        Лев: "Сегодня вы будете в центре внимания.",
+        Дева: "Сегодня удачный день для работы над проектами.",
+        Весы: "Сегодня у вас будет возможность решить давние конфликты.",
+        Скорпион: "Сегодня будьте осторожны в финансовых делах.",
+        Стрелец: "Сегодня вас ждут приятные сюрпризы.",
+        Козерог: "Сегодня удачный день для планирования.",
+        Водолей: "Сегодня возможны неожиданные предложения.",
+        Рыбы: "Сегодня вам стоит довериться интуиции.",
+      };
+
+      const zodiacSigns9_1 = [
+        { sign: "Овен", start: "03-21", end: "04-19" },
+        { sign: "Телец", start: "04-20", end: "05-20" },
+        { sign: "Близнецы", start: "05-21", end: "06-20" },
+        { sign: "Рак", start: "06-21", end: "07-22" },
+        { sign: "Лев", start: "07-23", end: "08-22" },
+        { sign: "Дева", start: "08-23", end: "09-22" },
+        { sign: "Весы", start: "09-23", end: "10-22" },
+        { sign: "Скорпион", start: "10-23", end: "11-21" },
+        { sign: "Стрелец", start: "11-22", end: "12-21" },
+        { sign: "Козерог", start: "12-22", end: "01-19" },
+        { sign: "Водолей", start: "01-20", end: "02-18" },
+        { sign: "Рыбы", start: "02-19", end: "03-20" },
+      ];
+      function getHoroscope9_1() {
+        const birthdate9_1 = document.getElementById("birthdate9_1").value;
+        if (!birthdate9_1) {
+          alert("Пожалуйста, введите дату рождения.");
+          return;
+        }
+        const monthDay = birthdate9_1.substr(5);
+        let userSign9_1 = "";
+        for (const zodiac of zodiacSigns9_1) {
+          if (monthDay >= zodiac.start && monthDay <= zodiac.end) {
+            userSign9_1 = zodiac.sign;
+            break;
+          }
+        }
+        if (!userSign9_1) {
+          userSign9_1 = "Козерог";
+        }
+        const horoscope9_1 = horoscopes9_1[userSign9_1];
+        document.getElementById(
+          "horoscope9_1"
+        ).innerText = `Ваш знак Зодиака: ${userSign9_1}\n${horoscope9_1}`;
+      }
+
+      // 9_2
+      function getHoroscope9_2() {
+        const birthdate9_2 = document.getElementById("birthdate9_2").value;
+        const day = document.querySelector('input[name="day"]:checked').value;
+        const horoscopeResult9_2 =
+          document.getElementById("horoscopeResult9_2");
+
+        if (!birthdate9_2) {
+          horoscopeResult9_2.textContent = "Пожалуйста, введите дату рождения.";
+          return;
+        }
+
+        const zodiacSign9_2 = getZodiacSign9_2(new Date(birthdate9_2));
+        const horoscope9_2 = fetchHoroscope9_2(zodiacSign9_2, day);
+
+        horoscopeResult9_2.textContent = `Ваш знак Зодиака: ${zodiacSign9_2}. Гороскоп на выбранный день: ${horoscope9_2}`;
+      }
+
+      function getZodiacSign9_2(date) {
+        const month = date.getUTCMonth() + 1;
+        const day = date.getUTCDate();
+        if ((month == 1 && day <= 19) || (month == 12 && day >= 22)) {
+          return "Козерог";
+        } else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+          return "Водолей";
+        } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+          return "Рыбы";
+        } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+          return "Овен";
+        } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+          return "Телец";
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+          return "Близнецы";
+        } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+          return "Рак";
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+          return "Лев";
+        } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+          return "Дева";
+        } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+          return "Весы";
+        } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+          return "Скорпион";
+        } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+          return "Стрелец";
+        }
+      }
+
+      function fetchHoroscope9_2(sign, day) {
+        const horoscopes9_2 = {
+          Козерог: {
+            today: "Сегодня вас ждет удача в делах.",
+            tomorrow: "Завтра возможны небольшие препятствия.",
+            dayAfterTomorrow: "Послезавтра вас ожидает приятный сюрприз.",
+          },
+          Водолей: {
+            today: "Сегодня вы будете полны энергии.",
+            tomorrow: "Завтра ожидаются неожиданные встречи.",
+            dayAfterTomorrow: "Послезавтра будет спокойный день.",
+          },
+          Рыбы: {
+            today: "Сегодня вы найдете ответы на важные вопросы.",
+            tomorrow: "Завтра вы будете окружены заботой.",
+            dayAfterTomorrow: "Послезавтра принесет новые возможности.",
+          },
+          Овен: {
+            today: "Сегодня ваш день будет насыщенным.",
+            tomorrow: "Завтра вы достигнете новых высот.",
+            dayAfterTomorrow: "Послезавтра вас ждет признание.",
+          },
+          Телец: {
+            today: "Сегодня удача на вашей стороне.",
+            tomorrow: "Завтра возможны новые встречи.",
+            dayAfterTomorrow: "Послезавтра будет день для отдыха.",
+          },
+          Близнецы: {
+            today: "Сегодня день для новых начинаний.",
+            tomorrow: "Завтра вас ждут приятные сюрпризы.",
+            dayAfterTomorrow: "Послезавтра вы получите важные новости.",
+          },
+          Рак: {
+            today: "Сегодня вы будете в центре внимания.",
+            tomorrow: "Завтра ваш день будет спокойным.",
+            dayAfterTomorrow: "Послезавтра вас ждет удача.",
+          },
+          Лев: {
+            today: "Сегодня день для творчества.",
+            tomorrow: "Завтра вы почувствуете прилив энергии.",
+            dayAfterTomorrow: "Послезавтра вас ждет успех.",
+          },
+          Дева: {
+            today: "Сегодня день для планирования.",
+            tomorrow: "Завтра будет день новых возможностей.",
+            dayAfterTomorrow: "Послезавтра вы найдете ответы на вопросы.",
+          },
+          Весы: {
+            today: "Сегодня ваш день будет гармоничным.",
+            tomorrow: "Завтра вы будете полны энергии.",
+            dayAfterTomorrow: "Послезавтра вас ждет спокойствие.",
+          },
+          Скорпион: {
+            today: "Сегодня день для решительных действий.",
+            tomorrow: "Завтра вас ждет признание.",
+            dayAfterTomorrow: "Послезавтра будет день для отдыха.",
+          },
+          Стрелец: {
+            today: "Сегодня вы будете полны вдохновения.",
+            tomorrow: "Завтра возможны новые возможности.",
+            dayAfterTomorrow: "Послезавтра будет день для приключений.",
+          },
+        };
+
+        return horoscopes9_2[sign][day];
+      }
+
+      // 10_1
+      const predictions10_1 = {
+        1: "Сегодня ваша энергия будет на высоте, готовьтесь к успешным начинаниям и достижениям.",
+        2: "Завтра ожидается неожиданная встреча, которая может изменить вашу жизнь.",
+        3: "Послезавтра вы найдете решение для давно беспокоящей вас проблемы, будьте внимательны.",
+        4: "Ваш творческий потенциал в настоящий момент на пике, не упустите шанс воплотить свои идеи в жизнь.",
+        5: "Будьте осторожны с финансами сегодня, возможны непредвиденные расходы.",
+        6: "Завтрашний день отлично подходит для начала нового делового проекта или поиска работы.",
+        7: "Ваша интуиция настраивается на высшую волну, доверьтесь ей при принятии важных решений.",
+        8: "Послезавтра вы можете встретить старого друга или получить неожиданный звонок от родственника.",
+        9: "Сегодняшний день благоприятен для взаимоотношений, не упустите возможность провести время с близкими.",
+        10: "Ваш труд будет оценен окружающими, не переставайте стремиться к своим целям.",
+      };
+      let parent10_1 = document.getElementById("parent10_1");
+      let timer10_1 = document.getElementById("timer10_1");
+      let text10_1 = document.getElementById("text10_1");
+      let start10_1 = document.getElementById("start10_1");
+      let stop10_1 = document.getElementById("stop10_1");
+      let intervalId10_1;
+      start10_1.addEventListener("click", function func10_1() {
+        intervalId10_1 = setInterval(updateTimer10_1, 100);
+        start10_1.classList.add("nonactive10_1");
+        stop10_1.classList.remove("nonactive10_1");
+        stop10_1.classList.add("active10_1");
+        this.removeEventListener("click", func10_1);
+        text10_1.style.display = "none";
+      });
+
+      stop10_1.addEventListener("click", function () {
+        clearInterval(intervalId10_1);
+        start10_1.classList.remove("nonactive10_1");
+        stop10_1.classList.remove("active10_1");
+        stop10_1.classList.add("nonactive10_1");
+        start10_1.classList.add("nonactive10_1");
+        text10_1.style.display = "block";
+      });
+
+      function updateTimer10_1() {
+        const randomNumber10_1 = getRandomInt10_1(1, 10);
+        timer10_1.textContent = randomNumber10_1;
+        text10_1.textContent = predictions10_1[randomNumber10_1];
+      }
+
+      function getRandomInt10_1(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // 10_2
+      const predictions10_2 = {
+        1: "Сегодня вас ждет удача и успех во всех начинаниях.",
+        2: "Завтра вы встретите интересного человека, который принесет в вашу жизнь новые возможности и перспективы.",
+        3: "Послезавтра вы найдете решение для давно давно беспокоящей вас проблемы, и оно будет простым и эффективным.",
+        4: "В ближайшем будущем вас ждет приятный сюрприз, который принесет радость и вдохновение.",
+        5: "Ваш труд и усилия будут вознаграждены, и вы достигнете значительных успехов в своей деятельности.",
+        6: "Сегодня вы можете столкнуться с непредвиденными трудностями и препятствиями.",
+        7: "Завтра может быть напряженным днем, когда ваше настроение и энергия будут нестабильными.",
+        8: "Послезавтра вас ждут разочарования и неудачи в важном деле или проекте.",
+        9: "В ближайшем будущем вы можете столкнуться с финансовыми проблемами или неожиданными расходами.",
+        10: "Ваши планы могут быть нарушены из-за непредвиденных обстоятельств, что приведет к разочарованию и стрессу.",
+      };
+
+      let parent10_2 = document.getElementById("parent10_2");
+      let timer10_2 = document.getElementById("timer10_2");
+      let text10_2 = document.getElementById("text10_2");
+      let start10_2 = document.getElementById("start10_2");
+      let stop10_2 = document.getElementById("stop10_2");
+      let intervalId10_2;
+      start10_2.addEventListener("click", function func10_2() {
+        intervalId10_2 = setInterval(updateTimer10_2, 100);
+        start10_2.classList.add("nonactive10_2");
+        stop10_2.classList.remove("nonactive10_2");
+        stop10_2.classList.add("active10_2");
+        this.removeEventListener("click", func10_2);
+        text10_2.style.display = "none";
+      });
+
+      stop10_2.addEventListener("click", function () {
+        clearInterval(intervalId10_2);
+        start10_2.classList.remove("nonactive10_2");
+        stop10_2.classList.remove("active10_2");
+        stop10_2.classList.add("nonactive10_2");
+        start10_2.classList.add("nonactive10_2");
+        text10_2.style.display = "block";
+      });
+
+      function updateTimer10_2() {
+        const randomNumber10_2 = getRandomInt10_2(1, 10);
+        timer10_2.textContent = randomNumber10_2;
+        text10_2.textContent = predictions10_2[randomNumber10_2];
+        if (randomNumber10_2 <= 5) {
+          text10_2.style.color = "green";
+        } else {
+          text10_2.style.color = "red";
+        }
+      }
+
+      function getRandomInt10_2(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // 11
+      let countries11 = ["Mexico", "Moldova", "Monaco", "Mongolia", "Morocco"];
+      let input11 = document.getElementById("elem11");
+      let list11 = document.getElementById("list11");
+      input11.addEventListener("input", () => {
+        let inputValue11 = input11.value.toLowerCase();
+        if (inputValue11 === "") {
+          list11.innerHTML = "";
+          return;
+        }
+
+        let filteredCountries11 = countries11.filter((country) =>
+          country.toLowerCase().startsWith(inputValue11)
+        );
+        list11.innerHTML = "";
+
+        filteredCountries11.forEach((country) => {
+          let li11 = document.createElement("li");
+          li11.textContent = country;
+          li11.addEventListener("click", () => {
+            input11.value = country;
+            list11.innerHTML = "";
+          });
+          list11.appendChild(li11);
+        });
+      });
+
+      // 12
+      function initializeSpoilers12() {
+        document.querySelectorAll(".toggle12").forEach((toggle) => {
+          toggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            let spoiler = toggle.closest("p").nextElementSibling;
+            if (spoiler && spoiler.classList.contains("spoiler12")) {
+              spoiler.classList.toggle("active12");
+            }
+          });
+        });
+      }
+      initializeSpoilers12();
+
+      // 13
+      document.querySelectorAll(".menu13 a").forEach((tabLink, index) => {
+        tabLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          document
+            .querySelector(".menu13 a.active13")
+            .classList.remove("active13");
+          document
+            .querySelector(".tabs13 .tab13.active13")
+            .classList.remove("active13");
+          tabLink.classList.add("active13");
+          document
+            .querySelectorAll(".tabs13 .tab13")
+            [index].classList.add("active13");
+        });
+      });
+
+      // 14
+      document.querySelectorAll("#parent14 .link14 a").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          let activeTab = document.querySelector("#parent14 .tab14.active14");
+          if (activeTab) {
+            activeTab.classList.remove("active14");
+          }
+          let parentTab = link.closest(".tab14");
+          parentTab.classList.add("active14");
+        });
+      });
+    </script>
+  </body>
+</html>
